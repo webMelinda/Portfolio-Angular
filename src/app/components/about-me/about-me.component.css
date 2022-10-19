@@ -1,0 +1,17 @@
+/*About me*/
+
+.col-6{
+    padding: 2rem;
+}
+
+
+
+.col ul li strong{
+    display: inline-block;
+    color: rgb(165, 42, 73);
+    width: 110px;
+}
+
+button.btn.btn-light{
+    margin: 50px;
+}
