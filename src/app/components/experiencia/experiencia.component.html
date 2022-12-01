@@ -4,11 +4,73 @@
   <div class="experiencia laboral">
     <h2><strong>Experiencia Laboral</strong></h2>
     <div class="divider"></div>
+    <!-- Button trigger modal Experiencia laboral-->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#experienciaLaboral">
+  <i class="fa-solid fa-square-plus"></i>
+</button>
+
+<!-- Modal experiencia laboral -->
+<div class="modal fade" id="experienciaLaboral" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo empleo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="formFileSm" class="form-label">Seleccionar Logo</label>
+          <input class="form-control form-control-sm" id="formFileSm" type="file">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Empresa</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Periodo de trabajo</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Puesto</span>
+          <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
   </div>
   <div class="container text-center">
     <div class="row">
-      <div class="col-2"></div>
-      <div class="col-2"><img src="./assets/IMG/uap.png" class="w-100" alt="uap"></div>
+      <div class="col-2">
+        <!-- Button trigger modal Eliminar-->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalEliminarExperiencia">
+  <i class="fa-solid fa-trash-can"></i>
+</button>
+
+<!-- Modal Eliminar -->
+<div class="modal fade" id="modalEliminarExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       ¿Seguro deseas eliminar este apartado?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="col-2"><img src="./assets/IMG/uap.png" class="w-75 imglogo" alt="uap"></div>
       <div class="col-7"><h4><strong>Universidad Adventista del Plata</strong></h4>(2015-2019)
         <ul>
           <li>Profesora de música - Escuela Domingo Faustino Sarmiento N°104</li>
@@ -21,8 +83,38 @@
     </div><br>
 
     <div class="row">
-      <div class="col-2"></div>
-      <div class="col-2"><img src="./assets/IMG/justallegro_Mesa de trabajo 1 copia 6.jpg" class="w-100" alt="allegro"></div>
-      <div class="col-7"> <h4><strong>Freelancer</strong></h4> - Profesora de Piano (2019-presente)</div>
+      <div class="col-2">
+        <!-- Button trigger modal Eliminar-->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modalEliminarExperiencia">
+  <i class="fa-solid fa-trash-can"></i>
+</button>
+
+<!-- Modal Eliminar -->
+<div class="modal fade" id="modalEliminarExperiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       ¿Seguro deseas eliminar este apartado?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <div class="col-2"><img src="./assets/IMG/justallegro_Mesa de trabajo 1 copia 6.jpg" class="w-75 imglogo" alt="allegro"></div>
+      <div class="col-7"> <h4><strong>Freelancer</strong></h4> (2019-presente)
+        <ul>
+          <li>Profesora de Piano </li>
+        </ul>
+      </div>
       <div class="col-1"></div>
     </div> 
+    </div>
+</section>

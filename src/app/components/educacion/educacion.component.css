@@ -1,3 +1,9 @@
-
+.imglogo{
+    min-width: 5em;
+    margin-left: -3em;
+}
     
-    
+.col-7{
+    margin-top: 1.5em;
+    text-align: left;
+}

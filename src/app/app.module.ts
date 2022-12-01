@@ -13,6 +13,13 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ErrorComponent } from './components/error/error.component';
+import { ButtonLoginComponent } from './components/button-login/button-login.component';
+import { IndexComponent } from './components/index/index.component';
+import { NavBarDashboardComponent } from './components/nav-bar-dashboard/nav-bar-dashboard.component';
+import { ButtonLogoutComponent } from './components/button-logout/button-logout.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +33,14 @@ import { FooterComponent } from './components/footer/footer.component';
     EducacionComponent,
     HabilidadesComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent,
+    ErrorComponent,
+    ButtonLoginComponent,
+    IndexComponent,
+    NavBarDashboardComponent,
+    ButtonLogoutComponent,
+   
   ],
   imports: [
     BrowserModule,

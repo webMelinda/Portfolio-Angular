@@ -12,6 +12,14 @@
     width: 110px;
 }
 
-button.btn.btn-light{
+.btn-light{
     margin: 50px;
+}
+
+.modal-title{
+    color: black
+}
+
+.form-label{
+    color:black
 }

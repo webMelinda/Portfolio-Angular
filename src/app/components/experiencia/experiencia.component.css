@@ -7,3 +7,23 @@
 .experiencia h2{
     font-size: 2.5em;
 }
+.imglogo{
+    min-width: 5em;
+    margin-left: -3em;
+}
+
+.col-7{
+    margin-top: 1.5em;
+    text-align: left;
+}
+.modal-title{
+    color: black
+}
+
+.form-label{
+    color:black
+}
+
+.modal-body{
+    color: black
+}
