@@ -19,6 +19,17 @@ import { ButtonLoginComponent } from './components/button-login/button-login.com
 import { IndexComponent } from './components/index/index.component';
 import { NavBarDashboardComponent } from './components/nav-bar-dashboard/nav-bar-dashboard.component';
 import { ButtonLogoutComponent } from './components/button-logout/button-logout.component';
+import { DeleteComponent } from './modals/delete/delete.component';
+import { AddEduComponent } from './modals/add-edu/add-edu.component';
+import { BannerEditComponent } from './modals/banner-edit/banner-edit.component';
+import { AboutEditComponent } from './modals/about-edit/about-edit.component';
+import { AddSkillsComponent } from './modals/add-skills/add-skills.component';
+import { AddProjectComponent } from './modals/add-project/add-project.component';
+import { SkillsEditComponent } from './modals/skills-edit/skills-edit.component';
+import { ProjectEditComponent } from './modals/project-edit/project-edit.component';
+import { AddExperienceComponent } from './modals/add-experience/add-experience.component';
+import { ExperienceEditComponent } from './modals/experience-edit/experience-edit.component';
+import { EducationEditComponent } from './modals/education-edit/education-edit.component';
 
 
 @NgModule({
@@ -40,6 +51,17 @@ import { ButtonLogoutComponent } from './components/button-logout/button-logout.
     IndexComponent,
     NavBarDashboardComponent,
     ButtonLogoutComponent,
+    DeleteComponent,
+    AddEduComponent,
+    BannerEditComponent,
+    AboutEditComponent,
+    AddSkillsComponent,
+    AddProjectComponent,
+    SkillsEditComponent,
+    ProjectEditComponent,
+    AddExperienceComponent,
+    ExperienceEditComponent,
+    EducationEditComponent,
    
   ],
   imports: [

@@ -1,0 +1,33 @@
+<!-- Button trigger modal Habilidades-->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#Habilidades">
+    <i class="fa-solid fa-square-plus"></i>
+  </button>
+  <!-- Modal habilidades -->
+  <div class="modal fade" id="Habilidades" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar nueva habilidad</h5>
+          <h6><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></h6>
+        </div>
+        <div class="modal-body">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Elige una opción</option>
+            <option value="1">Habilidad técnica</option>
+            <option value="2">Habilidades blandas</option>
+            <option value="3">Idiomas</option>
+          </select>
+          <br>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Habilidad</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <label for="customRange1" class="form-label"><h6>Rango</h6></label>
+  <input type="range" class="form-range" id="customRange1">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Guardar cambios</button>
+        </div>
+      </div>
+      </div>
