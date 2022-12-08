@@ -6,31 +6,16 @@
     <div class="divider"></div>
   </div>
   <div class="container text-center">
-    <div class="row">
+    <div class="row" *ngFor="let trabajo of experiencia">
       <div class="col-2">
       </div>
-      <div class="col-2"><img src="./assets/IMG/uap.png" class="w-75 imglogo" alt="uap"></div>
-      <div class="col-7"><h4><strong>Universidad Adventista del Plata </strong> <app-delete></app-delete><app-experience-edit></app-experience-edit></h4>(2015-2019)
+      <div class="col-2"><img [src]="trabajo.logo" class="w-75 imglogo" alt="uap"></div>
+      <div class="col-7"><h4><strong>{{trabajo.institucion}} </strong> <app-delete></app-delete><app-experience-edit></app-experience-edit></h4>({{trabajo.periodo}})
         <ul>
-          <li>Profesora de música - Escuela Domingo Faustino Sarmiento N°104</li>
-          <li>Profesora Adjunta de Práctica Docente I - Instituto Adventista del Plata D-4</li>
-          <li>Profesora de Piano - Academia de música de la Universidad Adventista del Plata</li>
-        </ul>
-       
+          <li>{{trabajo.puesto1}}</li>
+        </ul><br>
       </div>
       <div class="col-1"></div>
-    </div><br>
-
-    <div class="row">
-      <div class="col-2">
-      </div>
-      <div class="col-2"><img src="./assets/IMG/justallegro_Mesa de trabajo 1 copia 6.jpg" class="w-75 imglogo" alt="allegro"></div>
-      <div class="col-7"> <h4><strong>Freelancer </strong><app-delete></app-delete><app-experience-edit></app-experience-edit></h4> (2019-presente)
-        <ul>
-          <li>Profesora de Piano </li>
-        </ul>
-      </div>
-      <div class="col-1"></div>
-    </div> 
+    </div>
     </div>
 </section>

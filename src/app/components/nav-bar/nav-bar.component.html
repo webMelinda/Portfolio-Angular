@@ -4,7 +4,9 @@
       <a class="navbar-brand" href="#">
           <img src="./assets/IMG/APLogo-20-20.png" alt="" width="20%" height="">
         </a>
-        <app-redes></app-redes>
+        <ul class="navbar-nav" *ngFor="let contacto of red">
+          <li class="nav-item"><a class="nav-link" href={{contacto.url}} target="_blank"><i class={{contacto.icon}}></i></a></li>
+          </ul> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,6 +27,7 @@
           </ul>
         </div>
         <app-button-login></app-button-login>
+        <app-button-logout></app-button-logout>
      
 </div>
 <app-login></app-login> 

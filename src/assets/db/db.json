@@ -1,0 +1,132 @@
+{
+
+    
+        "id": 1,
+        "nombre": "Melinda",
+        "segundo_nombre": "Noelia",
+        "apellido": "Pinto",
+        "status": "desarrolladora web Full Stack Junior",
+        "fondo": "../assets/IMG/laptop-gb8896c9ab_1920.jpg",
+        "about_me": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nemo impedit at est earum aspernatur laudantium illo eius alias? Rerum quae corporis nulla nihil minus iure cum, blanditiis sed ex?",
+        "edad":"30",
+        "residencia": "Rafaela, Santa Fe, Argentina" ,
+        "mail": "melindapinto@gmail.com",
+        "foto_perfil": "../assets/IMG/foto_perfil.jpg",
+     
+    "redes": [
+        
+      {
+        "id": 1,
+        "nombre": "LinkedIn",
+        "url": "https://www.linkedin.com/in/melinda-pinto-ar22/",
+        "icon": "fa-brands fa-linkedin fa-xl"
+      },
+      {
+        "id": 2,
+        "nombre": "Github",
+        "url": "https://github.com/webMelinda",
+        "icon": "fa-brands fa-github fa-xl"
+      },
+      {
+        "id": 3,
+        "nombre": "Email",
+        "url": "mailto:melindapinto@gmail.com",
+        "icon": "fa-solid fa-envelope fa-xl"
+      }
+  ],
+
+    "experiencias":[
+      {
+        "id": 1,
+        "institucion": "Universidad Adventista del Plata",
+        "logo": "../assets/IMG/uap.png",
+        "periodo": "2015-2019",
+        "puesto1": "Profesora de música (Escuela Domingo Faustino Sarmiento N°104), Profesora Adjunta de la cátedra  de Práctica Docente I (Instituto Adventista del Plata D-4), Profesora de Piano (Academia de música de la Universidad Adventista del Plata)"
+
+      },
+      {
+        "id": 2,
+        "institucion": "Freelancer en Allegro",
+        "logo": "../assets/IMG/justallegro_Mesa de trabajo 1 copia 6.jpg",
+        "periodo": "2019-presente",
+        "puesto1": "Profesora de Piano"
+
+      }
+
+    ],
+
+    "estudios":[
+        {
+           "id": 1,
+          "titulo1":"Profesorado de Música",
+          "institucion": "Instituto Superior Adventista del Plata",
+          "logo": "../assets/IMG/uap.png"
+        },
+        {
+            "id": 2,
+            "titulo1":"Licenciatura en Teoría y Crítica de la Música, Tecnicatura en arreglos musicales",
+            "institucion": "Instituto Superior de Música",
+            "logo": "../assets/IMG/Universidad_del_Litoral.jpg"
+          },
+        {
+            "id": 3,
+            "titulo1":"Desarrollador Web FullStack Junior",
+            "institucion": "Argentina Programa",
+            "logo": "../assets/IMG/channels4_profile.jpg"
+          }
+    ],
+
+    "habilidades_tecnicas": [
+      {
+        "id": 1,
+        "nombre": "HTML",
+        "porcentaje": "70"
+      },
+      {
+          "id": 2,
+          "nombre": "CSS",
+          "porcentaje": "60"
+        },
+        {
+          "id": 3,
+          "nombre": "Bootstrap",
+          "porcentaje": "50"
+        }
+   ],
+
+   "idiomas": [
+    {
+      "id": 1,
+      "nombre": "Inglés",
+      "porcentaje": "70"
+    },
+    {
+        "id": 2,
+        "nombre": "Ruso",
+        "porcentaje": "55"
+      }
+ ],
+
+ "habilidades_blandas": [
+  {
+    "id": 1,
+    "nombre": "Organización",
+    "porcentaje": "80"
+  }
+],
+
+"proyectos": [
+  {
+      "id": 1,
+      "foto": "../assets/IMG/laptop-gb8896c9ab_1920.jpg",
+      "url": "https://github.com",
+      "titulo": "Portfolio Web",
+      "inicio": "28-06-2022",
+      "fin": "13-01-2023",
+      "descripcion": "Diseño de un porfolio web, utilizando diferentes tecnologías"
+  }
+]
+
+
+
+}

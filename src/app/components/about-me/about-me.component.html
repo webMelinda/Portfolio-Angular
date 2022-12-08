@@ -1,35 +1,34 @@
 <!--About me-->
 
 <section id="sobre mi" class="about me">
-    <div class="row">
+    <div class="row" >
       <div class="col-5">
-        <img src="./assets/IMG/foto_perfil.jpg" class="w-100" alt="melindapinto foto">
+        <img [src]="persona.foto_perfil" class="w-100" alt="melindapinto foto">
       </div>
       <div class="col-6">
          <app-about-edit></app-about-edit>
         <h2><strong>Sobre mí</strong></h2>
         <div class="divider"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nemo impedit at est earum aspernatur laudantium illo eius alias? Rerum quae corporis nulla nihil minus iure cum, blanditiis sed ex?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nemo impedit at est earum aspernatur laudantium illo eius alias? Rerum quae corporis nulla nihil minus iure cum, blanditiis sed ex?</p>
+        <p>{{persona.about_me}}}</p>
       <div class="fila">
         <div class="col">
-          <h3>Datos Personales</h3>
+          <h3>persona Personales</h3>
           <ul>
             <li>
               <strong>Nombre:</strong>
-              Melinda Noelia Pinto
+              {{persona.nombre}} {{persona.segundo_nombre}} {{persona.apellido}}
             </li>
             <li>
               <strong class="color">Edad:</strong>
-              30 años
+              {{persona.edad}} años
             </li>
             <li>
               <strong>Residencia:</strong>
-              Rafaela, Santa Fe, Argentina
+              {{persona.residencia}}
             </li>
             <li>
               <strong>Email:</strong>
-              melindapinto@gmail.com
+              {{persona.mail}}
             </li>
           </ul>
         </div>

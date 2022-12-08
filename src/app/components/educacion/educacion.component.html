@@ -5,28 +5,16 @@
       <div class="divider"></div>
     </div>
     <div class="container text-center">
-      <div class="row">
+       <div class="row" *ngFor="let educacion of estudio">
         <div class="col-2">
         </div>
-        <div class="col-2"><img src="assets/IMG/uap.png" class="w-75 imglogo" alt="uap"></div>
-        <div class="col-7"><app-delete></app-delete><app-education-edit></app-education-edit><h4>Instituto Superior Adventista del Plata</h4><h6>Profesorado de Música</h6></div>
-        <div class="col-1"></div>
-      </div><br>
-  
-      <div class="row">
-        <div class="col-2">
-        </div>
-        <div class="col-2"><img src="assets/IMG/Universidad_del_Litoral.jpg " class="w-75 imglogo" alt="allegro"></div>
-        <div class="col-7"><app-delete></app-delete><app-education-edit></app-education-edit><h4>Instituto Superior de Música</h4><h6>Licenciatura en Teoría y Crítica de la Música
-          Tecnicatura en arreglos musicales</h6>
+        <div class="col-2"><img [src]="educacion.logo " class="w-75 imglogo" alt="allegro"></div>
+        <div class="col-7"><h4>{{educacion.institucion}}</h4><app-delete></app-delete><app-education-edit></app-education-edit>
+          <ul>
+            <li>{{educacion.titulo1}}</li>
+          </ul>
         </div>
         <div class="col-1"></div>
       </div> <br>
-      <div class="row">
-        <div class="col-2">
-        </div>
-        <div class="col-2"><img src="assets/IMG/channels4_profile.jpg" class="w-75 imglogo" alt="uap"></div>
-        <div class="col-7"><app-delete></app-delete><app-education-edit></app-education-edit><h6>Curso Argentina Programa</h6></div>
-        <div class="col-1"></div>
       </div>
 

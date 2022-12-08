@@ -4,14 +4,14 @@
       <h2><strong>Proyectos <app-add-project></app-add-project></strong></h2>
       <div class="divider"></div>
     </div>
-    <div class="container text-center">
+    <div class="container text-center" *ngFor="let trabajo of proyecto">
       <div class="row">
         <div class="col">
           <div class="card" style="width: 18rem;">
-            <img src="assets/IMG/laptop-gb8896c9ab_1920.jpg" class="card-img-top" alt="portfolio web">
+            <img [src]= "trabajo.foto" class="card-img-top" alt="portfolio web">
             <div class="card-body">
-              <h5 class="card-title">Portfolio Web <app-delete></app-delete><app-project-edit></app-project-edit></h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">{{trabajo.titulo}} <app-delete></app-delete><app-project-edit></app-project-edit></h5>
+              <p class="card-text">{{trabajo.descripcion}}</p>
             </div>
           </div>
         </div>
