@@ -1,7 +1,12 @@
 .modal-title{
-    color: black
+    color: black;
 }
 
 .form-label{
-    color:black
+    color:black;
+}
+
+.form-floating{
+    color: black;
+    text-align: left;
 }

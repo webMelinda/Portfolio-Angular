@@ -5,3 +5,11 @@
 .form-label{
     color:black
 }
+
+.form-floating{
+    color: black;
+}
+
+.error{
+    color:red;
+  }

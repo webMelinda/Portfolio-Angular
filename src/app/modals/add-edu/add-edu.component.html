@@ -10,24 +10,37 @@
           <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo estudio</h5>
           <h6><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></h6>
         </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="formFileSm" class="form-label"><h6>Seleccionar Logo</h6></label>
-            <input class="form-control form-control-sm" id="formFileSm" type="file">
+        <form [formGroup]="form"  (ngSubmit)="onEnviar($event)">
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="formFileSm" class="form-label"><h6>Seleccionar Logo</h6></label>
+              <input class="form-control form-control-sm" id="formFileSm" type="file">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Nombre de la Institución</span>
+              <input type="text" formControlName="institucion" [class.border-danger]="InstitucionValid" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div *ngIf="Institucion?.errors  && Institucion?.touched">    
+              <h6 *ngIf="Institucion?.hasError('required')" class="error">
+                  El Nombre de la institucion es requerido.
+              </h6>
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Título/Certificado</span>
+              <input type="text" formControlName="titulo" [class.border-danger]="TituloValid" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div *ngIf="Titulo?.errors  && Titulo?.touched">    
+              <h6 *ngIf="Titulo?.hasError('required')" class="error">
+                  El título/certificado es requerido.
+              </h6>
+            </div>
           </div>
-          <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre de la Institución</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Guardar cambios</button>
           </div>
-          <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Título/Certificado</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
-        </div>
+        </form>
+        
       </div>
     </div>
   </div>

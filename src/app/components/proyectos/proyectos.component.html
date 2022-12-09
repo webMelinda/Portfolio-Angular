@@ -4,15 +4,18 @@
       <h2><strong>Proyectos <app-add-project></app-add-project></strong></h2>
       <div class="divider"></div>
     </div>
+   
     <div class="container text-center" *ngFor="let trabajo of proyecto">
       <div class="row">
         <div class="col">
           <div class="card" style="width: 18rem;">
             <img [src]= "trabajo.foto" class="card-img-top" alt="portfolio web">
             <div class="card-body">
-              <h5 class="card-title">{{trabajo.titulo}} <app-delete></app-delete><app-project-edit></app-project-edit></h5>
+              <h5 class="card-title">{{trabajo.titulo}} </h5>
               <p class="card-text">{{trabajo.descripcion}}</p>
+              <a href={{trabajo.url}} target="_blank" class="btn btn-secondary">Ver</a><app-delete></app-delete><app-project-edit></app-project-edit>
             </div>
+            
           </div>
         </div>
         <div class="col"></div>
