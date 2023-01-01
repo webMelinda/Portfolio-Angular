@@ -1,14 +1,14 @@
      <!--Banner-->
-   <div class="banner" [ngStyle]="{background: 'url('+ persona.fondo +')'}">
-    <div class="capa">
+<div class="banner" *ngFor="let fondo of banner" [ngStyle]="{background: 'url('+fondo.foto+')'}">
+  <div class="capa">
     <app-banner-edit></app-banner-edit>
     <app-delete></app-delete>
-  <div class="contenido">
-    <h1>Bienvenidos a mi Portfolio Web</h1>
-    <h2>Soy <strong>{{persona.nombre}} {{persona.apellido}}</strong></h2>
-    <h4>{{persona.status}}</h4>
+    <div class="contenido" *ngFor="let datos of banner">
+      <h1>Bienvenidos a mi Portfolio Web</h1>
+      <h2 id="nombre">Soy <strong>{{datos.nombre}}</strong></h2>
+      <h4>{{datos.titulo}}</h4>
+    </div>
   </div>
-</div>
 </div>
   
 

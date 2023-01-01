@@ -23,11 +23,22 @@
                 <input type="text" formControlName="titulo" [class.border-danger]="TituloValid" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
               </div>
               <div *ngIf="Titulo?.errors  && Titulo?.touched">    
-                <p *ngIf="Titulo?.hasError('required')" class="error">
+                <h6 *ngIf="Titulo?.hasError('required')" class="error">
                     El Título/Certificado es requerido.
-                </p>
+                </h6>
             </div>
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Nombre del usuario</span>
+              <input type="text" formControlName="nombre" [class.border-danger]="TituloValid" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div *ngIf="Nombre?.errors  && Nombre?.touched">    
+              <h6 *ngIf="Nombre?.hasError('required')" class="error">
+                  El Nombre del usuario es requerido.
+              </h6>
           </div>
+            </div>
+           
+          
           <div class="modal-footer">
             <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Guardar</button>
           </div>

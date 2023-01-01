@@ -80,17 +80,17 @@
       {
         "id": 1,
         "nombre": "HTML",
-        "porcentaje": "70"
+        "porcentaje": "50"
       },
       {
           "id": 2,
           "nombre": "CSS",
-          "porcentaje": "60"
+          "porcentaje": "20"
         },
         {
           "id": 3,
           "nombre": "Bootstrap",
-          "porcentaje": "50"
+          "porcentaje": "70"
         }
    ],
 

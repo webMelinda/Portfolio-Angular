@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DatosService } from 'src/app/servicios/datos.service';
+import { Banner } from 'src/app/model/banner';
+import { BannerService } from 'src/app/servicios/banner.service';
+
 
 @Component({
   selector: 'app-banner',
@@ -7,13 +9,12 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-  persona: any 
-  constructor(private datos:DatosService) { }
+  banner: Banner[]= [];
+
+  constructor(public bannerService: BannerService) { }
 
   ngOnInit(): void {
-    this.datos.getDatos().subscribe(data =>{
-      this.persona = data;
-    })
+   this.bannerService.verBanners().subscribe(data => {this.banner = data}) 
   }
 
 }

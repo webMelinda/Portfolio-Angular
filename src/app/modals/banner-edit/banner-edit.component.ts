@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-banner-edit',
@@ -8,11 +8,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class BannerEditComponent implements OnInit {
   form: FormGroup;
+  
 
    constructor(private formBuilder: FormBuilder) {
     this.form= this.formBuilder.group({
       titulo:['',[Validators.required]],
-      
+      nombre:['',[Validators.required]],
     })
     }
 
@@ -24,6 +25,14 @@ export class BannerEditComponent implements OnInit {
 
     get TituloValid(){
       return this.Titulo?.touched && !this.Titulo?.valid;
+    }
+
+    get Nombre(){
+      return this.form.get("nombre");
+    }
+
+    get NombreValid(){
+      return this.Nombre?.touched && !this.Nombre?.valid;
     }
 
     onEnviar(event: Event){
