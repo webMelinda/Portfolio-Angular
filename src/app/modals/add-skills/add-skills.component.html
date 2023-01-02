@@ -12,20 +12,9 @@
         </div>
         <form [formGroup]="form"  (ngSubmit)="onEnviar($event)">
           <div class="modal-body">
-            <select class="form-select" aria-label="Default select example" formControlName="habilidad" [class.border-danger]="HabilidadValid">
-              <option value="1">Habilidad técnica</option>
-              <option value="2">Habilidades blandas</option>
-              <option value="3">Idiomas</option>
-            </select>
-            <div *ngIf="Habilidad?.errors  && Habilidad?.touched">
-              <h6 *ngIf="Habilidad?.hasError('required')" class="error">
-                Elegir un campo es requerido.
-              </h6>
-            </div>
-            <br>
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Habilidad</span>
-              <input type="text" formControlName="nombre" [class.border-danger]="NombreValid" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="nombre" [class.border-danger]="NombreValid" [(ngModel)]="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Nombre?.errors  && Nombre?.touched">
               <h6 *ngIf="Nombre?.hasError('required')" class="error">
@@ -34,7 +23,7 @@
             </div>
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Rango</span>
-              <input type="text" formControlName="rango" [class.border-danger]="RangoValid" class="form-control" placeholder="(un número del 0 al 100)" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="rango" [class.border-danger]="RangoValid" [(ngModel)]="porcentaje" class="form-control" placeholder="(un número del 0 al 100)" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Rango?.errors  && Rango?.touched">
               <h6 *ngIf="Rango?.hasError('required')" class="error">
@@ -53,7 +42,7 @@
             
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
           </div>
         </form>
         

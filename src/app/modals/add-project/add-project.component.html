@@ -8,21 +8,21 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo proyecto</h5>
-         <h6><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></h6>
+         <h6><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"(click)="limpiar()"></button></h6>
         </div>
         <form [formGroup]="form"  (ngSubmit)="onEnviar($event)">
           <div class="modal-body">
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Proyecto</span>
-              <input type="text" formControlName="proyecto" [class.border-danger]="ProyectoValid" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="nombre" [class.border-danger]="ProyectoValid" [(ngModel)]="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
-            <div *ngIf="Proyecto?.errors  && Proyecto?.touched">
-              <h6 *ngIf="Proyecto?.hasError('required')" class="error">
+            <div *ngIf="Nombre?.errors  && Nombre?.touched">
+              <h6 *ngIf="Nombre?.hasError('required')" class="error">
                 Nombre del proyecto es requerido.
               </h6>
             </div>
             <div class="form-floating">
-              <textarea class="form-control" formControlName="descripcion" [class.border-danger]="DescripcionValid" id="floatingTextarea2" style="height: 100px"></textarea>
+              <textarea class="form-control" formControlName="descripcion" [class.border-danger]="DescripcionValid" [(ngModel)]="descripcion" id="floatingTextarea2" style="height: 100px"></textarea>
               <label for="floatingTextarea2"><h6>Descripción del Proyecto</h6></label>
             </div>
             <div *ngIf="Descripcion?.errors  && Descripcion?.touched">
@@ -31,18 +31,18 @@
               </h6>
             </div>
             <div class="mb-3">
-              <label for="formFileSm" class="form-label"><h6>Imagen del proyecto</h6></label>
-              <input class="form-control form-control-sm" id="formFileSm" type="file">
+              <label for="foto-url" class="form-label"><h6>URL de la imagen del proyecto</h6></label>
+              <input type="text" class="form-control" formControlName="foto" [(ngModel)]="foto"  id="foto-url" aria-describedby="basic-addon3">
             </div>
             <div class="mb-3">
-              <label for="basic-url" class="form-label"><h6>URL del proyecto</h6></label>
+              <label for="url" class="form-label"><h6>URL del proyecto</h6></label>
               <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" [(ngModel)]="url" [ngModelOptions]="{standalone: true}" id="url" aria-describedby="basic-addon3">
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Guardar cambios</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"(click)="limpiar()">Cerrar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
           </div>
         </form>
       </div>

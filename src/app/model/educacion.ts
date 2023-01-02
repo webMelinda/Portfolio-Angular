@@ -5,7 +5,7 @@ export class Educacion {
     logo: string;
     
 
-    constructor (institucion: string,logo: string,titulo: string){
+    constructor (institucion: string,titulo: string, logo: string){
         this.institucion = institucion;
         this.titulo = titulo;
         this.logo = logo;

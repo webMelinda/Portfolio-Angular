@@ -9,40 +9,45 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Agregar nuevo empleo</h5>
-          <h6><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></h6>
+          <h6><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button></h6>
         </div>
         <form [formGroup]="form"  (ngSubmit)="onEnviar($event)">
           <div class="modal-body">
             <div class="mb-3">
-              <label for="formFileSm" class="form-label"><h6>Seleccionar Logo</h6></label>
-              <input class="form-control form-control-sm" id="formFileSm" type="file">
+              <label for="basic-url" class="form-label"><h6>URL del logo</h6></label>
+              <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                <input type="text" class="form-control" formControlName="logo" [(ngModel)]="logo" id="basic-url" aria-describedby="basic-addon3">
             </div>
+
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Empresa</span>
-              <input type="text" formControlName="empresa" [class.border-danger]="EmpresaValid" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="empresa" [class.border-danger]="EmpresaValid" class="form-control" [(ngModel)]="institucion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Empresa?.errors  && Empresa?.touched">    
               <h6 *ngIf="Empresa?.hasError('required')" class="error">
                   El Nombre de la empresa es requerido.
               </h6>
             </div>
+
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Periodo de trabajo</span>
-              <input type="text" formControlName="periodo" [class.border-danger]="PeriodoValid" class="form-control" placeholder="Ej: año - año" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="periodo" [class.border-danger]="PeriodoValid" class="form-control" [(ngModel)]="periodo" placeholder="Ej: año - año" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Periodo?.errors  && Periodo?.touched">    
               <h6 *ngIf="Periodo?.hasError('required')" class="error">
                   El periodo de tiempo es requerido.
               </h6>
           </div>
+
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Puesto</span>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control" formControlName="puesto" [(ngModel)]="puesto" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
           </div>
+
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="limpiar()">Cancelar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
           </div>
         </form>
         

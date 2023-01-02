@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { Educacion } from 'src/app/model/educacion';
+import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
   selector: 'app-add-edu',
@@ -8,11 +10,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class AddEduComponent implements OnInit {
   form: FormGroup;
+  institucion: string= '';
+  titulo: string='';
+  logo: string='';
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder, private eduService: EducacionService) { 
     this.form= this.formBuilder.group({
       institucion:['',[Validators.required]],
       titulo:['', [Validators.required]],
+      logo:['']
     })
   }
 
@@ -26,6 +32,10 @@ export class AddEduComponent implements OnInit {
    return this.form.get("titulo");
   }
 
+  get Logo(){
+    return this.form.get("logo");
+   }
+
   get InstitucionValid(){
     return this.Institucion?.touched && !this.Institucion?.valid;
   }
@@ -34,16 +44,25 @@ export class AddEduComponent implements OnInit {
     return this.Titulo?.touched && !this.Titulo?.valid;
   }
 
+  onCreate(): void{
+    const edu = new Educacion(this.institucion, this.titulo, this.logo);
+    this.eduService.crearEducacion(edu).subscribe(data => {alert("Educación Añadida")
+  window.location.reload();
+    });
+  }
+
+  limpiar(): void{
+    this.form.reset();
+  }
+
   onEnviar(event: Event){
     // Detenemos la propagación o ejecución del compotamiento submit de un form
     event.preventDefault; 
  
     if (this.form.valid){
-      // Llamamos a nuestro servicio para enviar los datos al servidor
-      // También podríamos ejecutar alguna lógica extra
-      alert("Todo salio bien ¡Enviar formuario!")
+      this.onCreate()
     }else{
-      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
+      alert("falló la carga de datos, intente nuevamente");     
       this.form.markAllAsTouched(); 
     }
  

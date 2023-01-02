@@ -2,13 +2,13 @@
 
 <section id="habilidades" class="skills">
     <div class="edu">
-      <h2><strong>Habilidades </strong><app-add-skills></app-add-skills></h2>
+      <h2><strong>Habilidades </strong></h2>
       <div class="divider"></div>
     </div>
     <div class="row">
       <div class="col-1"></div>
       <div class="col-4">
-          <h4>Habilidades Técnicas</h4><br>
+          <h4>Habilidades Técnicas <app-add-skills></app-add-skills></h4><br>
           <div class="habilidad-tec" *ngFor="let habilidad of tecnica">
             <h6>{{habilidad.nombre}}</h6><app-delete></app-delete><app-skills-edit></app-skills-edit>
             <div class="progress">

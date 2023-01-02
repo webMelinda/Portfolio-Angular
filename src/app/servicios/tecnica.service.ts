@@ -19,6 +19,10 @@ export class TecnicaService {
     return this.http.put<any>(this.ruta +'update', tecnica);
   }
 
+  public crearTecnica(tecnica: Tecnica): Observable<any>{
+    return this.http.post<any>(this.ruta + 'crear', tecnica);
+  } 
+
   public delete(id: number):Observable<any>{
     return this.http.delete<any>(this.ruta + `delete/${id}`);
   }

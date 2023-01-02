@@ -19,6 +19,10 @@ export class ProyectoService {
     return this.http.put<any>(this.ruta +'update', proyecto);
   }
 
+  public crearProyecto(proyecto: Proyecto): Observable<any>{
+    return this.http.post<any>(this.ruta + 'crear', proyecto);
+  } 
+
   public delete(id: number):Observable<any>{
     return this.http.delete<any>(this.ruta + `delete/${id}`);
   }

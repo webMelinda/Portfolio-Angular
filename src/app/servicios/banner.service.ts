@@ -16,11 +16,11 @@ export class BannerService {
     return this.http.get<Banner[]>(`${this.ruta}lista`); 
   }
 
-  public editar(banner: Banner):Observable<any>{
+  public editarBanner(banner: Banner):Observable<any>{
     return this.http.put<any>(this.ruta +'update', banner);
   }
 
-  public delete(id: number):Observable<any>{
+  public borrarBanner(id: number):Observable<any>{
     return this.http.delete<any>(this.ruta + `delete/${id}`);
   }
 }

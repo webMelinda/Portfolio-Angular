@@ -19,6 +19,10 @@ export class EducacionService {
     return this.http.put<any>(this.ruta +'update', educacion);
   }
 
+  public crearEducacion(educacion: Educacion): Observable<any>{
+    return this.http.post<any>(this.ruta + 'crear', educacion);
+  } 
+
   public delete(id: number):Observable<any>{
     return this.http.delete<any>(this.ruta + `delete/${id}`);
   }

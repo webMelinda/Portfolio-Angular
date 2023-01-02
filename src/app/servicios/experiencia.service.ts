@@ -18,6 +18,10 @@ export class ExperienciaService {
     return this.http.put<any>(this.ruta +'update', experiencia);
   }
 
+  public crearExperiencia(experiencia: Experiencia): Observable<any>{
+    return this.http.post<any>(this.ruta + 'crear', experiencia);
+  } 
+
   public delete(id: number):Observable<any>{
     return this.http.delete<any>(this.ruta + `delete/${id}`);
   }
