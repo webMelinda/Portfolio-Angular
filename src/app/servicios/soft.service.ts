@@ -19,6 +19,10 @@ export class SoftService {
     return this.http.put<any>(this.ruta +'update', soft);
   }
 
+  public crearSoft(soft: Soft): Observable<any>{
+    return this.http.post<any>(this.ruta + 'crear', soft);
+  } 
+
   public delete(id: number):Observable<any>{
     return this.http.delete<any>(this.ruta + `delete/${id}`);
   }

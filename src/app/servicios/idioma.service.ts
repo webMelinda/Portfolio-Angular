@@ -19,6 +19,10 @@ export class IdiomaService {
     return this.http.put<any>(this.ruta +'update', idioma);
   }
 
+  public crearIdioma(idioma: Idioma): Observable<any>{
+    return this.http.post<any>(this.ruta + 'crear', idioma);
+  } 
+
   public delete(id: number):Observable<any>{
     return this.http.delete<any>(this.ruta + `delete/${id}`);
   }
