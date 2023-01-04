@@ -17,5 +17,13 @@ export class ProyectosComponent implements OnInit {
     this.proyectoService.verProyectos().subscribe(data => {this.proyecto = data})
   }
 
-
+  eliminar(id?: number){
+    if(id !=undefined){
+      if(confirm('¿Seguro desea eliminar este apartado?')){
+        this.proyectoService.delete(id).subscribe(
+          data =>{
+            this.ngOnInit();
+          })
+      } window.location.reload(); 
+      }}
 }

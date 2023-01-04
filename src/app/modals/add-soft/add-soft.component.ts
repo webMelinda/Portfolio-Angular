@@ -40,9 +40,9 @@ export class AddSoftComponent implements OnInit {
  
    onCreate(): void{
      const softy = new Soft(this.nombre, this.porcentaje);
-     this.softService.crearSoft(softy).subscribe(data => {alert("Técnica Añadida")
-   window.location.reload();
+     this.softService.crearSoft(softy).subscribe(data => {alert("Técnica Añadida");
      });
+     window.location.reload();
    }
  
    limpiar(): void{

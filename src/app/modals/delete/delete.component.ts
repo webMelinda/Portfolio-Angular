@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Soft } from 'src/app/model/soft';
+import { SoftService } from 'src/app/servicios/soft.service';
 
 @Component({
   selector: 'app-delete',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent implements OnInit {
+  nombre: string='';
+  porcentaje: string='';
+  soft: Soft[]=[]
+  
+  
+  constructor(private softService: SoftService) { }
+  
 
-  constructor() { }
+  ngOnInit(): void {}
+  
 
-  ngOnInit(): void {
-  }
+  
 
 }

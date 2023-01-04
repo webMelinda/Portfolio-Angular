@@ -16,5 +16,15 @@ export class ExperienciaComponent implements OnInit {
   ngOnInit(): void {
     this.experienciaService.verExperiencias().subscribe(data => {this.experiencia = data}) 
   }
+  
+  eliminar(id?: number){
+    if(id !=undefined){
+      if(confirm('¿Seguro desea eliminar este apartado?')){
+        this.experienciaService.delete(id).subscribe(
+          data =>{
+            this.ngOnInit();
+          })
+      } window.location.reload(); 
+      }}
 
 }

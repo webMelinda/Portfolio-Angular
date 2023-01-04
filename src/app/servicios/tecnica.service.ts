@@ -24,6 +24,6 @@ export class TecnicaService {
   } 
 
   public delete(id: number):Observable<any>{
-    return this.http.delete<any>(this.ruta + `delete/${id}`);
+    return this.http.delete<any>(this.ruta + `borrar/${id}`);
   }
 }

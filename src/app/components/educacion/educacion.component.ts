@@ -15,5 +15,13 @@ export class EducacionComponent implements OnInit {
   ngOnInit(): void {
     this.eduService.verEducacions().subscribe(data => {this.estudio = data})
   }
-
+  eliminar(id?: number){
+    if(id !=undefined){
+      if(confirm('¿Seguro desea eliminar este apartado?')){
+        this.eduService.delete(id).subscribe(
+          data =>{
+            this.ngOnInit();
+          })
+      } window.location.reload(); 
+      }}
 }

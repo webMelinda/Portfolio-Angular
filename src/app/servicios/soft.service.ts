@@ -15,6 +15,10 @@ export class SoftService {
     return this.http.get<Soft[]>(`${this.ruta}lista`); 
   }
 
+  public buscarSofts(id:number): Observable<Soft>{
+    return this.http.get<Soft>(this.ruta + `detail/${id}`); 
+  }
+
   public editar(soft: Soft):Observable<any>{
     return this.http.put<any>(this.ruta +'update', soft);
   }
@@ -24,6 +28,6 @@ export class SoftService {
   } 
 
   public delete(id: number):Observable<any>{
-    return this.http.delete<any>(this.ruta + `delete/${id}`);
+    return this.http.delete<any>(this.ruta + `borrar/${id}`);
   }
 }
