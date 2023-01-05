@@ -21,7 +21,7 @@
 
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Empresa</span>
-              <input type="text" formControlName="empresa" [class.border-danger]="EmpresaValid" class="form-control" [(ngModel)]="institucion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="empresa" [ngClass]="{'is-invalid': Empresa.errors && Empresa.touched, 'is-valid': !Empresa.errors && Empresa.touched}" class="form-control" [(ngModel)]="institucion" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Empresa?.errors  && Empresa?.touched">    
               <h6 *ngIf="Empresa?.hasError('required')" class="error">
@@ -31,7 +31,7 @@
 
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Periodo de trabajo</span>
-              <input type="text" formControlName="periodo" [class.border-danger]="PeriodoValid" class="form-control" [(ngModel)]="periodo" placeholder="Ej: año - año" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="periodo" [ngClass]="{'is-invalid': Periodo.errors && Periodo.touched, 'is-valid': !Periodo.errors && Periodo.touched}" class="form-control" [(ngModel)]="periodo" placeholder="Ej: año - año" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Periodo?.errors  && Periodo?.touched">    
               <h6 *ngIf="Periodo?.hasError('required')" class="error">

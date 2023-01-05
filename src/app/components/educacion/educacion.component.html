@@ -9,7 +9,9 @@
         <div class="col-2">
         </div>
         <div class="col-2"><img [src]="educacion.logo " class="w-75 imglogo" alt="allegro"></div>
-        <div class="col-7"><h4>{{educacion.institucion}}</h4><button type="submit" class="btn btn-secondary" (click)="eliminar(educacion.id)" ><i class="fa-solid fa-trash-can"></i></button><app-education-edit></app-education-edit>
+        <div class="col-7"><h4>{{educacion.institucion}}</h4><button type="submit" class="btn btn-secondary" (click)="eliminar(educacion.id)" ><i class="fa-solid fa-trash-can"></i></button><button type="button" class="btn btn-secondary" routerLink="editedu/{{educacion.id}}">
+             <i class="fa-solid fa-pen-to-square"></i>
+           </button>
           <ul>
             <li>{{educacion.titulo}}</li>
           </ul>

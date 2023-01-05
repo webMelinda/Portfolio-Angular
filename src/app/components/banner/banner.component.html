@@ -1,7 +1,9 @@
      <!--Banner-->
 <div class="banner" *ngFor="let fondo of banner" [ngStyle]="{background: 'url('+fondo.foto+')'}">
   <div class="capa">
-    <app-banner-edit></app-banner-edit>
+    <button type="button" class="btn btn-secondary" routerLink="editbanner/{{fondo.id}}">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </button>
     <app-delete></app-delete>
     <div class="contenido" *ngFor="let datos of banner">
       <h1>Bienvenidos a mi Portfolio Web</h1>
@@ -10,5 +12,7 @@
     </div>
   </div>
 </div>
+
+ 
   
 

@@ -32,13 +32,7 @@ export class AddSkillsComponent implements OnInit {
     return this.form.get("rango");
    }
 
-  get NombreValid() {
-    return this.Nombre?.touched && !this.Nombre?.valid;
-  }
-
-  get RangoValid() {
-    return this.Rango?.touched && !this.Rango?.valid;
-  }
+ 
 
   onCreate(): void{
     const tec = new Tecnica(this.nombre, this.porcentaje);

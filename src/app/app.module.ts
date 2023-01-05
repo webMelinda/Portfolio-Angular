@@ -31,6 +31,8 @@ import { ExperienceEditComponent } from './modals/experience-edit/experience-edi
 import { EducationEditComponent } from './modals/education-edit/education-edit.component';
 import { AddIdiomaComponent } from './modals/add-idioma/add-idioma.component';
 import { AddSoftComponent } from './modals/add-soft/add-soft.component';
+import { IdiomaEditComponent } from './modals/idioma-edit/idioma-edit.component';
+import { SoftEditComponent } from './modals/soft-edit/soft-edit.component';
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import { AddSoftComponent } from './modals/add-soft/add-soft.component';
     EducationEditComponent,
     AddIdiomaComponent,
     AddSoftComponent,
+    IdiomaEditComponent,
+    SoftEditComponent,
    
   ],
   imports: [

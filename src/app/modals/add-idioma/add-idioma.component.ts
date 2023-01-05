@@ -31,14 +31,7 @@ export class AddIdiomaComponent implements OnInit {
      return this.form.get("rango");
     }
  
-   get NombreValid() {
-     return this.Nombre?.touched && !this.Nombre?.valid;
-   }
- 
-   get RangoValid() {
-     return this.Rango?.touched && !this.Rango?.valid;
-   }
-
+   
    onCreate(): void{
     const idiom = new Idioma(this.nombre, this.porcentaje);
     this.idiomaService.crearIdioma(idiom).subscribe(data => {alert("Técnica Añadida")

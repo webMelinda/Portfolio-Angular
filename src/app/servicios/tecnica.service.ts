@@ -14,9 +14,12 @@ export class TecnicaService {
   public verTecnicas(): Observable<Tecnica[]>{
     return this.http.get<Tecnica[]>(`${this.ruta}lista`); 
   }
+  public verTecnica(id: number): Observable<Tecnica>{
+    return this.http.get<Tecnica>(this.ruta + `ver/${id}`);
+  }
 
   public editar(tecnica: Tecnica):Observable<any>{
-    return this.http.put<any>(this.ruta +'update', tecnica);
+    return this.http.put<any>(this.ruta +'editar', tecnica);
   }
 
   public crearTecnica(tecnica: Tecnica): Observable<any>{

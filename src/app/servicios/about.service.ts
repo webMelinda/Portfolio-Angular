@@ -16,8 +16,12 @@ export class AboutService {
     return this.http.get<About[]>(`${this.ruta}lista`); 
   }
 
+  public verPersona(id: number): Observable<About>{
+    return this.http.get<About>(this.ruta + `ver/${id}`);
+  }
+
   public editar(persona: About):Observable<any>{
-    return this.http.put<any>(this.ruta +'update', persona);
+    return this.http.put<any>(this.ruta +'editar', persona);
   }
 
   public delete(id: number):Observable<any>{

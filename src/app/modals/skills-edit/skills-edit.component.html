@@ -1,23 +1,43 @@
-<!-- Button trigger modal Habilidades-->
-<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#Skills-edit">
-    <i class="fa-solid fa-pen-to-square"></i>
-  </button>
-  <!-- Modal habilidades -->
-  <div class="modal fade" id="Skills-edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+
+
+  <!-- Editar habilidades técnicas -->
+  <form [formGroup]="form"  (ngSubmit)="onEnviar($event)" class="bg-white rounded p-5">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Editar habilidad</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Rango</span>
-            <input type="text" class="form-control" placeholder="(un número del 0 al 100)" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+
+          <div class="modal-body">
+            <input type="hidden" formControlName="id" [ngModel]="skill.id">
+
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Habilidad</span>
+              <input type="text" [ngModel]="skill.nombre" formControlName="nombre">
+            </div>
+          
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Porcentaje</span>
+              <input type="text" [ngModel]="skill.porcentaje" formControlName="porcentaje" [ngClass]="{'is-invalid': Porcentaje.errors && Porcentaje.touched, 'is-valid': !Porcentaje.errors && Porcentaje.touched}"  class="form-control" placeholder="(un número del 0 al 100)" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            </div>
+
+            <div>
+               <h6 *ngIf="Porcentaje?.errors?.['min']
+          " class="error">
+                El número debe ser mayor a 0.
+            </h6>
+            <h6 *ngIf="Porcentaje?.errors?.['max']
+          " class="error">
+                El número debe ser menor o igual a 100.
+            </h6>
+            </div>
+
           </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
-        </div>
+            
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+          </div>
       </div>
-      </div>
+        </form>
+        

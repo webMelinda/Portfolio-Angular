@@ -1,33 +1,31 @@
- <!-- Button trigger modal Educación-->
- <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#EducaciónEdit">
-    <i class="fa-solid fa-pen-to-square"></i>
-  </button>
-  <!-- Modal experiencia laboral -->
-  <div class="modal fade" id="EducaciónEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+
+  <!-- Editar Educación -->
+  <form [formGroup]="form"  (ngSubmit)="onEnviar($event)" class="bg-white rounded p-5">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Editar estudio</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
         <div class="modal-body">
+          <input type="hidden" formControlName="id" [ngModel]="edu.id">
           <div class="mb-3">
-            <label for="formFileSm" class="form-label">Seleccionar Logo</label>
-            <input class="form-control form-control-sm" id="formFileSm" type="file">
+            <span class="input-group-text" id="logo-url">Url Logo</span>
+            <input type="text" [ngModel]="edu.logo" type="text" formControlName="logo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
           </div>
           <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre de la Institución</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <span class="input-group-text" id="institucion-nimbre">Nombre de la Institución</span>
+            <input type="text" [ngModel]="edu.institucion" type="text" formControlName="institucion" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
           </div>
           <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">Título/Certificado</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <input type="text" [ngModel]="edu.titulo" type="text" formControlName="titulo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
         </div>
       </div>
-    </div>
-  </div>
+    </form>
+    

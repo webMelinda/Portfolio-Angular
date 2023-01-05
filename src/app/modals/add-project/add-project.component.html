@@ -14,7 +14,7 @@
           <div class="modal-body">
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Proyecto</span>
-              <input type="text" formControlName="nombre" [class.border-danger]="ProyectoValid" [(ngModel)]="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="nombre" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}" [(ngModel)]="nombre" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Nombre?.errors  && Nombre?.touched">
               <h6 *ngIf="Nombre?.hasError('required')" class="error">
@@ -22,7 +22,7 @@
               </h6>
             </div>
             <div class="form-floating">
-              <textarea class="form-control" formControlName="descripcion" [class.border-danger]="DescripcionValid" [(ngModel)]="descripcion" id="floatingTextarea2" style="height: 100px"></textarea>
+              <textarea class="form-control" formControlName="descripcion" [ngClass]="{'is-invalid': Descripcion.errors && Descripcion.touched, 'is-valid': !Descripcion.errors && Descripcion.touched}" [(ngModel)]="descripcion" id="floatingTextarea2" style="height: 100px"></textarea>
               <label for="floatingTextarea2"><h6>Descripción del Proyecto</h6></label>
             </div>
             <div *ngIf="Descripcion?.errors  && Descripcion?.touched">
@@ -31,8 +31,8 @@
               </h6>
             </div>
             <div class="mb-3">
-              <label for="foto-url" class="form-label"><h6>URL de la imagen del proyecto</h6></label>
-              <input type="text" class="form-control" formControlName="foto" [(ngModel)]="foto"  id="foto-url" aria-describedby="basic-addon3">
+              <label for="Descripcion-url" class="form-label"><h6>URL de la imagen del proyecto</h6></label>
+              <input type="text" class="form-control" formControlName="Descripcion" [(ngModel)]="foto"  id="Descripcion-url" aria-describedby="basic-addon3">
             </div>
             <div class="mb-3">
               <label for="url" class="form-label"><h6>URL del proyecto</h6></label>

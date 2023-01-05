@@ -15,8 +15,12 @@ export class EducacionService {
     return this.http.get<Educacion[]>(`${this.ruta}lista`); 
   }
 
+  public verEducacion(id: number): Observable<Educacion>{
+    return this.http.get<Educacion>(this.ruta + `ver/${id}`);
+  }
+
   public editar(educacion: Educacion):Observable<any>{
-    return this.http.put<any>(this.ruta +'update', educacion);
+    return this.http.put<any>(this.ruta +'editar', educacion);
   }
 
   public crearEducacion(educacion: Educacion): Observable<any>{

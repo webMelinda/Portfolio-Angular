@@ -6,7 +6,9 @@
         <img [src]="datos.perfil_img" class="w-100" alt="melindapinto foto">
       </div>
       <div class="col-6">
-         <app-about-edit></app-about-edit>
+        <button type="button" class="btn btn-secondary" routerLink="editabout/{{datos.id}}" >
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
         <h2><strong>Sobre mí</strong></h2>
         <div class="divider"></div>
         <p>{{datos.about}}</p>

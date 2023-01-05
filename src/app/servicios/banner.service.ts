@@ -16,8 +16,12 @@ export class BannerService {
     return this.http.get<Banner[]>(`${this.ruta}lista`); 
   }
 
+  public verBanner(id: number): Observable<Banner>{
+    return this.http.get<Banner>(this.ruta + `ver/${id}`);
+  }
+
   public editarBanner(banner: Banner):Observable<any>{
-    return this.http.put<any>(this.ruta +'update', banner);
+    return this.http.put<any>(this.ruta +'editar', banner);
   }
 
   public borrarBanner(id: number):Observable<any>{

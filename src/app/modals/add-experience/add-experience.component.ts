@@ -43,13 +43,7 @@ export class AddExperienceComponent implements OnInit {
    return this.form.get("puesto");
   }
 
-  get EmpresaValid(){
-    return this.Empresa?.touched && !this.Empresa?.valid;
-  }
-
-  get PeriodoValid() {
-    return this.Periodo?.touched && !this.Periodo?.valid;
-  }
+  
 
   onCreate(): void{
     const expe = new Experiencia(this.institucion, this.puesto, this.periodo, this.logo);

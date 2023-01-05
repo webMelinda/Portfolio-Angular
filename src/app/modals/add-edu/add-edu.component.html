@@ -18,7 +18,7 @@
             </div>
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Nombre de la Institución</span>
-              <input type="text" formControlName="institucion" [class.border-danger]="InstitucionValid" [(ngModel)]="institucion" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="institucion" [ngClass]="{'is-invalid': Institucion.errors && Institucion.touched, 'is-valid': !Institucion.errors && Institucion.touched}" [(ngModel)]="institucion" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Institucion?.errors  && Institucion?.touched">    
               <h6 *ngIf="Institucion?.hasError('required')" class="error">
@@ -27,7 +27,7 @@
             </div>
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Título/Certificado</span>
-              <input type="text" formControlName="titulo" [class.border-danger]="TituloValid" [(ngModel)]="titulo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" formControlName="titulo" [ngClass]="{'is-invalid': Titulo.errors && Titulo.touched, 'is-valid': !Titulo.errors && Titulo.touched}" [(ngModel)]="titulo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Titulo?.errors  && Titulo?.touched">    
               <h6 *ngIf="Titulo?.hasError('required')" class="error">

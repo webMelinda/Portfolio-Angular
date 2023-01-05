@@ -36,14 +36,6 @@ export class AddEduComponent implements OnInit {
     return this.form.get("logo");
    }
 
-  get InstitucionValid(){
-    return this.Institucion?.touched && !this.Institucion?.valid;
-  }
-
-  get TituloValid() {
-    return this.Titulo?.touched && !this.Titulo?.valid;
-  }
-
   onCreate(): void{
     const edu = new Educacion(this.institucion, this.titulo, this.logo);
     this.eduService.crearEducacion(edu).subscribe(data => {alert("Educación Añadida")

@@ -30,14 +30,6 @@ export class AddSoftComponent implements OnInit {
      return this.form.get("rango");
     }
  
-   get NombreValid() {
-     return this.Nombre?.touched && !this.Nombre?.valid;
-   }
- 
-   get RangoValid() {
-     return this.Rango?.touched && !this.Rango?.valid;
-   }
- 
    onCreate(): void{
      const softy = new Soft(this.nombre, this.porcentaje);
      this.softService.crearSoft(softy).subscribe(data => {alert("Técnica Añadida");

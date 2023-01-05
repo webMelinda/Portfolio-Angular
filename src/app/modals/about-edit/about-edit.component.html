@@ -1,52 +1,48 @@
-<!-- Button trigger modal sobre mí -->
-<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#modal-sobremi">
-    <i class="fa-solid fa-pen-to-square"></i>
-  </button>
   
-  <!-- Modal sobre mí -->
-  <div class="modal fade" id="modal-sobremi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <!-- Editar sobre mí -->
+ 
+  <form [formGroup]="form"  (ngSubmit)="onEnviar($event)" class="bg-white rounded p-5">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Editar: Sobre mí</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form [formGroup]="form"  (ngSubmit)="onEnviar($event)">
           <div class="modal-body">
+            <input type="hidden" formControlName="id" [ngModel]="about.id">
             <div class="mb-3">
               <label for="formFileSm" class="form-label">Foto de perfil</label>
-              <input class="form-control form-control-sm" id="formFileSm" type="file">
+              <input class="form-control form-control-sm" [ngModel]="about.perfil_img" formControlName="perfil_img" id="formFileSm" type="url">
             </div>
             <div class="form-floating">
-              <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <textarea class="form-control" [ngModel]="about.about" formControlName="about" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
               <label for="floatingTextarea2">Sobre mí (Agregar descripción)</label>
             </div>
             <br>
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control" [ngModel]="about.nombre"formControlName="nombre" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Segundo Nombre</span>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control" [ngModel]="about.second_name"formControlName="second_name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Apellido</span>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control" [ngModel]="about.apellido "formControlName="apellido" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
           
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Edad</span>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control"[ngModel]="about.edad" formControlName="edad" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Residencia</span>
-              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control"[ngModel]="about.residencia" formControlName="residencia" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             
             <div class="input-group input-group-sm mb-3">
               <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
-              <input type="text" formControlName="email" [class.border-danger]="MailValid" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" [ngModel]="about.email" formControlName="email" [ngClass]="{'is-invalid': Mail.errors && Mail.touched, 'is-valid': !Mail.errors && Mail.touched}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>
             <div *ngIf="Mail?.errors  && Mail?.touched">    
               <p *ngIf="Mail?.hasError('email')" class="error">
@@ -58,7 +54,6 @@
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             <button type="submit" class="btn btn-primary">Guardar cambios</button>
           </div>
-        </form>
-      </div>
-    </div>
-  </div>
+        </div>
+      </form>
+    

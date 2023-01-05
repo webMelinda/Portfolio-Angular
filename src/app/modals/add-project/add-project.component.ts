@@ -43,13 +43,7 @@ export class AddProjectComponent implements OnInit {
     return this.form.get("url");
   }
 
-  get ProyectoValid(){
-    return this.Nombre?.touched && !this.Nombre?.valid;
-  }
 
-  get DescripcionValid() {
-    return this.Descripcion?.touched && !this.Descripcion?.valid;
-  }
 
   onCreate(): void{
     const project = new Proyecto(this.foto, this.url, this.nombre, this.descripcion);
