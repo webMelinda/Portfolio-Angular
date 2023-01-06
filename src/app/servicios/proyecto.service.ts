@@ -15,8 +15,12 @@ export class ProyectoService {
     return this.http.get<Proyecto[]>(`${this.ruta}lista`); 
   }
 
+  public verProyecto(id:number): Observable<Proyecto>{
+    return this.http.get<Proyecto>(this.ruta + `ver/${id}`); 
+  }
+
   public editar(proyecto: Proyecto):Observable<any>{
-    return this.http.put<any>(this.ruta +'update', proyecto);
+    return this.http.put<any>(this.ruta +'editar', proyecto);
   }
 
   public crearProyecto(proyecto: Proyecto): Observable<any>{

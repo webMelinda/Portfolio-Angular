@@ -1,1 +1,40 @@
-<p>soft-edit works!</p>
+<!-- Editar habilidades blandas -->
+<form [formGroup]="form"  (ngSubmit)="onEnviar($event)" class="bg-white rounded p-5">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar habilidad</h5>
+        <button type="button" class="btn-close" routerLink="" aria-label="Close"></button>
+      </div>
+
+        <div class="modal-body">
+          <input type="hidden" formControlName="id" [ngModel]="soft.id">
+
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Habilidad</span>
+            <input type="text" [ngModel]="soft.nombre" formControlName="nombre">
+          </div>
+        
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Porcentaje</span>
+            <input type="text" [ngModel]="soft.porcentaje" formControlName="porcentaje" [ngClass]="{'is-invalid': Porcentaje.errors && Porcentaje.touched, 'is-valid': !Porcentaje.errors && Porcentaje.touched}"  class="form-control" placeholder="(un número del 0 al 100)" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+
+          <div>
+             <h6 *ngIf="Porcentaje?.errors?.['min']
+        " class="error">
+              El número debe ser mayor a 0.
+          </h6>
+          <h6 *ngIf="Porcentaje?.errors?.['max']
+        " class="error">
+              El número debe ser menor o igual a 100.
+          </h6>
+          </div>
+
+        </div>
+          
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" routerLink="">Cancelar</button>
+          <button type="submit" class="btn btn-primary" >Guardar cambios</button>
+        </div>
+    </div>
+      </form>

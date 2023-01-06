@@ -15,8 +15,12 @@ export class IdiomaService {
     return this.http.get<Idioma[]>(`${this.ruta}lista`); 
   }
 
+  public verIdioma(id:number): Observable<Idioma>{
+    return this.http.get<Idioma>(this.ruta + `ver/${id}`); 
+  }
+
   public editar(idioma: Idioma):Observable<any>{
-    return this.http.put<any>(this.ruta +'update', idioma);
+    return this.http.put<any>(this.ruta +'editar', idioma);
   }
 
   public crearIdioma(idioma: Idioma): Observable<any>{

@@ -36,7 +36,7 @@ export class SkillsEditComponent implements OnInit {
   }
 
   get Nombre(){
-    return this.form.get("tnombre");
+    return this.form.get("nombre");
   }
 
   get Porcentaje(){

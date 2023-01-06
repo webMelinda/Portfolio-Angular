@@ -15,12 +15,12 @@ export class SoftService {
     return this.http.get<Soft[]>(`${this.ruta}lista`); 
   }
 
-  public buscarSofts(id:number): Observable<Soft>{
-    return this.http.get<Soft>(this.ruta + `detail/${id}`); 
+  public verSoft(id:number): Observable<Soft>{
+    return this.http.get<Soft>(this.ruta + `ver/${id}`); 
   }
 
   public editar(soft: Soft):Observable<any>{
-    return this.http.put<any>(this.ruta +'update', soft);
+    return this.http.put<any>(this.ruta +'editar', soft);
   }
 
   public crearSoft(soft: Soft): Observable<any>{

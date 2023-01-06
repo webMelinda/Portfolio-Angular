@@ -7,6 +7,7 @@ import { BannerEditComponent } from './modals/banner-edit/banner-edit.component'
 import { EducationEditComponent } from './modals/education-edit/education-edit.component';
 import { ExperienceEditComponent } from './modals/experience-edit/experience-edit.component';
 import { IdiomaEditComponent } from './modals/idioma-edit/idioma-edit.component';
+import { ProjectEditComponent } from './modals/project-edit/project-edit.component';
 import { SkillsEditComponent } from './modals/skills-edit/skills-edit.component';
 import { SoftEditComponent } from './modals/soft-edit/soft-edit.component';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'edittec/:id', component:SkillsEditComponent},
   {path: 'editidioma/:id', component:IdiomaEditComponent},
   {path: 'editsoft/:id', component:SoftEditComponent},
+  {path: 'editproject/:id', component:ProjectEditComponent},
   {path: '**', component: ErrorComponent },
 ];
 
