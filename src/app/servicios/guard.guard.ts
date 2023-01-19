@@ -7,7 +7,7 @@ import { AutenticacionService } from './autenticacion.service';
   providedIn: 'root'
 })
 export class GuardGuard implements CanActivate {
-  constructor(private autenticacionServicio: AutenticacionService, private rutas : Router){
+  constructor(private autenticacionServicio: AutenticacionService){
 
   }
   canActivate(

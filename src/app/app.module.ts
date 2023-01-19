@@ -18,7 +18,6 @@ import { ErrorComponent } from './components/error/error.component';
 import { ButtonLoginComponent } from './components/button-login/button-login.component';
 import { IndexComponent } from './components/index/index.component';
 import { ButtonLogoutComponent } from './components/button-logout/button-logout.component';
-import { DeleteComponent } from './modals/delete/delete.component';
 import { AddEduComponent } from './modals/add-edu/add-edu.component';
 import { BannerEditComponent } from './modals/banner-edit/banner-edit.component';
 import { AboutEditComponent } from './modals/about-edit/about-edit.component';
@@ -54,7 +53,6 @@ import { AboutService } from './servicios/about.service';
     ButtonLoginComponent,
     IndexComponent,
     ButtonLogoutComponent,
-    DeleteComponent,
     AddEduComponent,
     BannerEditComponent,
     AboutEditComponent,

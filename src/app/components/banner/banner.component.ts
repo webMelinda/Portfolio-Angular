@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { About } from 'src/app/model/about';
 import { Banner } from 'src/app/model/banner';
-import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { AboutService } from 'src/app/servicios/about.service';
 import { BannerService } from 'src/app/servicios/banner.service';
-import { UsuarioService } from 'src/app/servicios/usuario.service';
+
 
 
 
@@ -17,14 +18,14 @@ export class BannerComponent implements OnInit {
   foto: string='';
   titulo: string='';
   modoEdit: any;
-  usuario: any;
+  persona: About [] = [];
 
-  constructor(public bannerService: BannerService, private usuService: UsuarioService) { }
+  constructor(public bannerService: BannerService, private aboutService: AboutService) { }
 
   ngOnInit(): void {
    this.bannerService.verBanners().subscribe(data => {this.banner = data});
-   this.usuService.verUsuarios().subscribe(data =>{
-    this.usuario = data
+   this.aboutService.verPersonas().subscribe(data =>{
+    this.persona = data
   });
 
   if (sessionStorage.getItem('currentUser') == "null"){

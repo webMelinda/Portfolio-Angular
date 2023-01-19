@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
             alert("Acceso correcto");
             this.ruta.navigate(['']);
           } else {
-            alert("Acceso incorrecto");
+            alert("Acceso incorrecto, verifique email y contraseña");
           }
           
           

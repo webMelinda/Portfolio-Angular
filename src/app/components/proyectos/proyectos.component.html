@@ -1,7 +1,7 @@
 <!--proyectos-->
 <section id="proyectos" class="proyectos">
     <div class="edu">
-      <h2><strong>Proyectos <app-add-project></app-add-project></strong></h2>
+      <h2><strong>Proyectos <app-add-project *ngIf="modoEdit"></app-add-project></strong></h2>
       <div class="divider"></div>
     </div>
    
@@ -13,7 +13,7 @@
             <div class="card-body">
               <h5 class="card-title">{{trabajo.nombre}} </h5>
               <p class="card-text">{{trabajo.descripcion}}</p>
-              <a href={{trabajo.url}} target="_blank" class="btn btn-secondary">Ver</a><button type="submit" class="btn btn-secondary" (click)="eliminar(trabajo.id)" ><i class="fa-solid fa-trash-can"></i></button><button type="button" class="btn btn-secondary" routerLink="editproject/{{trabajo.id}}">
+              <a href={{trabajo.url}} target="_blank" class="btn btn-secondary">Ver</a><button *ngIf="modoEdit" type="submit" class="btn btn-secondary" (click)="eliminar(trabajo.id)" ><i class="fa-solid fa-trash-can"></i></button><button *ngIf="modoEdit" type="button" class="btn btn-secondary" routerLink="editproject/{{trabajo.id}}">
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
             </div>

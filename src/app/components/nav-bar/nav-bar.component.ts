@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/model/usuario';
+import { About } from 'src/app/model/about';
+import { AboutService } from 'src/app/servicios/about.service';
 import { DatosService } from 'src/app/servicios/datos.service';
-import { UsuarioService } from 'src/app/servicios/usuario.service';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,14 +11,18 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 export class NavBarComponent implements OnInit {
   red: any = [];
-  usuario: any;
+  persona: About[] = [];
   modoEdit: Boolean = false
   
 
-  constructor(private datos:DatosService) { }
+  constructor(private datos:DatosService, private aboutService: AboutService) { }
 
   ngOnInit(): void {this.datos.getDatos().subscribe(data =>{
     this.red = data.redes;
+  });
+
+  this.aboutService.verPersonas().subscribe(data =>{
+    this.persona = data
   });
   
   if (sessionStorage.getItem('currentUser') == "null"){
