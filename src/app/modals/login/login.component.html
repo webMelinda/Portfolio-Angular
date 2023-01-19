@@ -12,7 +12,7 @@
       <div class="modal-body">
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Dirección de email</label>
-            <input type="email" formControlName="email" [(ngModel)]="usuario.email" [ngClass]="{'is-invalid': Email.errors && Email.touched, 'is-valid': !Email.errors && Email.touched}" class="form-control" id="exampleInputEmail1" value="" aria-describedby="emailHelp">
+            <input type="email" formControlName="email" [(ngModel)]="persona.email" [ngClass]="{'is-invalid': Email.errors && Email.touched, 'is-valid': !Email.errors && Email.touched}" class="form-control" id="exampleInputEmail1" value="" aria-describedby="emailHelp">
           </div>
           <div *ngIf="Email?.errors  && Email?.touched">    
             <p *ngIf="Email?.hasError('required')" class="error">
@@ -25,7 +25,7 @@
 
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-            <input type="password" formControlName="clave" [(ngModel)]="usuario.clave" [ngClass]="{'is-invalid': Clave.errors && Clave.touched, 'is-valid': !Clave.errors && Clave.touched}" class="form-control" id="exampleInputPassword1">
+            <input type="password" formControlName="clave" [(ngModel)]="persona.clave" [ngClass]="{'is-invalid': Clave.errors && Clave.touched, 'is-valid': !Clave.errors && Clave.touched}" class="form-control" id="exampleInputPassword1">
           </div>
           <div *ngIf="Clave?.errors  && Clave?.touched">
             <p *ngIf="Clave?.hasError('required')" class="error">

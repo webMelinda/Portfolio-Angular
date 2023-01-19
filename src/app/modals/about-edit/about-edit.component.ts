@@ -25,6 +25,7 @@ export class AboutEditComponent implements OnInit {
       edad:[''],
       residencia:[''],
       email:['', [Validators.email]],
+      clave: ['']
 
     })
   }

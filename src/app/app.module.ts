@@ -35,6 +35,7 @@ import { IdiomaEditComponent } from './modals/idioma-edit/idioma-edit.component'
 import { SoftEditComponent } from './modals/soft-edit/soft-edit.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { UsuarioService } from './servicios/usuario.service';
+import { AboutService } from './servicios/about.service';
 
 
 @NgModule({
@@ -77,7 +78,7 @@ import { UsuarioService } from './servicios/usuario.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [UsuarioService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
+  providers: [AboutService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

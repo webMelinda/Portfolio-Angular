@@ -9,6 +9,7 @@
         </div>
           <div class="modal-body">
             <input type="hidden" formControlName="id" [ngModel]="about.id">
+            <input type="hidden" formControlName="clave" [ngModel]="about.clave">
             <div class="mb-3">
               <label for="formFileSm" class="form-label">Foto de perfil</label>
               <input class="form-control form-control-sm" [ngModel]="about.perfil_img" formControlName="perfil_img" id="formFileSm" type="url">
@@ -18,7 +19,7 @@
               <label for="floatingTextarea2">Sobre mí (Agregar descripción)</label>
             </div>
             <br>
-            <div class="input-group input-group-sm mb-3">
+            <div class="input-group input-group-sm mb-3" >
               <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
               <input type="text" class="form-control" [ngModel]="about.nombre"formControlName="nombre" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
             </div>

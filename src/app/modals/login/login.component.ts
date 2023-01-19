@@ -5,6 +5,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
+import { About } from 'src/app/model/about';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   email = '';
   clave = '';
-  usuario: Usuario = new Usuario ("", "")
+  persona: About = new About ("", "", "", "", "", "", "", "", "");
 
   constructor(private ruta: Router, private formBuilder: FormBuilder, private autService:AutenticacionService) { 
     this.form= this.formBuilder.group({
@@ -43,10 +44,10 @@ export class LoginComponent implements OnInit {
     event.preventDefault; 
  
     if (this.form.valid){
-      console.log(JSON.stringify(this.form.value));
-      this.autService.loginPersona(JSON.stringify(this.form.value)).subscribe(data=> {
-          console.log("DATA: " + JSON.stringify(data.id));
-          if (data.id){
+      //console.log(JSON.stringify(this.form.value));
+      this.autService.loginPersona(this.form.value).subscribe(data=> {
+          //console.log("DATA: " + JSON.stringify(data.id));
+          if (data){
             alert("Acceso correcto");
             this.ruta.navigate(['']);
           } else {
