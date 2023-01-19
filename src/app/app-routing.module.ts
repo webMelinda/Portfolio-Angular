@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './components/error/error.component';
 import { IndexComponent } from './components/index/index.component';
+import { GuardGuard } from './servicios/guard.guard';
 import { AboutEditComponent } from './modals/about-edit/about-edit.component';
 import { BannerEditComponent } from './modals/banner-edit/banner-edit.component';
 import { EducationEditComponent } from './modals/education-edit/education-edit.component';
 import { ExperienceEditComponent } from './modals/experience-edit/experience-edit.component';
 import { IdiomaEditComponent } from './modals/idioma-edit/idioma-edit.component';
+import { LoginComponent } from './modals/login/login.component';
 import { ProjectEditComponent } from './modals/project-edit/project-edit.component';
 import { SkillsEditComponent } from './modals/skills-edit/skills-edit.component';
 import { SoftEditComponent } from './modals/soft-edit/soft-edit.component';
@@ -15,7 +17,8 @@ import { SoftEditComponent } from './modals/soft-edit/soft-edit.component';
 
 
 const routes: Routes = [
-  {path: '', component:IndexComponent},
+  {path: '', component:IndexComponent, canActivate: [GuardGuard]},
+  {path: 'login', component:LoginComponent},
   {path: 'editbanner/:id', component:BannerEditComponent},
   {path: 'editabout/:id', component:AboutEditComponent},
   {path: 'editexpe/:id', component:ExperienceEditComponent},

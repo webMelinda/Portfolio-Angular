@@ -1,5 +1,5 @@
  <!-- Button trigger modal -->
- <button type="button" class="btn btn-outline-light" data-bs-target="#exampleModal" routerLink="/index">
+ <button *ngIf="modoEdit" type="button" class="btn btn-outline-light" (click)="cerrarSesion()">
     Logout 
     </button>
 

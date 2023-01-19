@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/model/usuario';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 @Component({
   selector: 'app-login',
@@ -8,43 +13,56 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;
+  email = '';
+  clave = '';
+  usuario: Usuario = new Usuario ("", "")
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private ruta: Router, private formBuilder: FormBuilder, private autService:AutenticacionService) { 
     this.form= this.formBuilder.group({
-      password:['',[Validators.required, Validators.minLength(8)]],
       email:['', [Validators.required, Validators.email]],
+      clave:['',[Validators.required, Validators.minLength(6)]], 
     })
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+    sessionStorage.setItem('currentUser', null);
+  }
 
-  get Password(){
-    return this.form.get("password");
+  get Clave(){
+    return this.form.get('clave');
   }
  
-  get Mail(){
-   return this.form.get("email");
+  get Email(){
+   return this.form.get('email');
   }
 
-  get PasswordValid(){
-    return this.Password?.touched && !this.Password?.valid;
-  }
-
-  get MailValid() {
-    return this.Mail?.touched && !this.Mail?.valid;
-  }
+  
 
   onEnviar(event: Event){
-    // Detenemos la propagación o ejecución del compotamiento submit de un form
+
     event.preventDefault; 
  
     if (this.form.valid){
-      // Llamamos a nuestro servicio para enviar los datos al servidor
-      // También podríamos ejecutar alguna lógica extra
-      alert("Todo salio bien ¡Enviar formuario!")
+      console.log(JSON.stringify(this.form.value));
+      this.autService.loginPersona(JSON.stringify(this.form.value)).subscribe(data=> {
+          console.log("DATA: " + JSON.stringify(data.id));
+          if (data.id){
+            alert("Acceso correcto");
+            this.ruta.navigate(['']);
+          } else {
+            alert("Acceso incorrecto");
+          }
+          
+          
+        }, error => {
+          //this.ruta.navigate(['login'])
+          alert("error al iniciar sesion")
+        })
+        
     }else{
       // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
-      this.form.markAllAsTouched(); 
+      sessionStorage.setItem('currentUser', null);
+      alert("Hay un error en el formulario")
     }
  
   }

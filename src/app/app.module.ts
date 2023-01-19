@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,8 @@ import { AddIdiomaComponent } from './modals/add-idioma/add-idioma.component';
 import { AddSoftComponent } from './modals/add-soft/add-soft.component';
 import { IdiomaEditComponent } from './modals/idioma-edit/idioma-edit.component';
 import { SoftEditComponent } from './modals/soft-edit/soft-edit.component';
+import { InterceptorService } from './servicios/interceptor.service';
+import { UsuarioService } from './servicios/usuario.service';
 
 
 @NgModule({
@@ -75,7 +77,7 @@ import { SoftEditComponent } from './modals/soft-edit/soft-edit.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UsuarioService, { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

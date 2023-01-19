@@ -26,11 +26,15 @@
             </li>
           </ul>
         </div>
-        <app-button-login></app-button-login>
-        <app-button-logout></app-button-logout>
+        <button type="button" class="btn btn-outline-light" routerLink="login">
+          Login
+      </button>
+        <button  type="button" class="btn btn-outline-light" (click)="cerrarSesion()">
+          Logout 
+          </button>
      
 </div>
-<app-login></app-login> 
+
              
  
 
