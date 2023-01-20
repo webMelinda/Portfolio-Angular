@@ -39,8 +39,8 @@ export class AddEduComponent implements OnInit {
   onCreate(): void{
     const edu = new Educacion(this.institucion, this.titulo, this.logo);
     this.eduService.crearEducacion(edu).subscribe(data => {alert("Educación Añadida")
-  window.location.reload();
-    });
+   });
+   window.location.reload(); 
   }
 
   limpiar(): void{

@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/model/usuario';
 import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { About } from 'src/app/model/about';
 
@@ -16,7 +13,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   email = '';
   clave = '';
-  persona: About = new About ("", "", "", "", "", "", "", "", "");
+  persona: About = new About ("", "", "", "", "", "", "", "", "", "");
 
   constructor(private ruta: Router, private formBuilder: FormBuilder, private autService:AutenticacionService) { 
     this.form= this.formBuilder.group({

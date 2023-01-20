@@ -10,8 +10,8 @@
           <div class="modal-body">
             <input type="hidden" formControlName="id" [ngModel]="about.id">
             <input type="hidden" formControlName="clave" [ngModel]="about.clave">
-            <div class="mb-3">
-              <label for="formFileSm" class="form-label">Foto de perfil</label>
+            <div class="input-group input-group-sm mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Foto de Perfil</span>
               <input class="form-control form-control-sm" [ngModel]="about.perfil_img" formControlName="perfil_img" id="formFileSm" type="url">
             </div>
             <div class="form-floating">
@@ -49,7 +49,11 @@
               <p *ngIf="Mail?.hasError('email')" class="error">
                   El formato del email debe ser válido.
                 </p>
-          </div>  
+          </div> 
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Curriculum Vitae</span>
+            <input class="form-control form-control-sm" [ngModel]="about.cv" formControlName="cv" id="cvFile" type="url">
+          </div> 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" routerLink="">Cancelar</button>

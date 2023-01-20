@@ -25,7 +25,8 @@ export class AboutEditComponent implements OnInit {
       edad:[''],
       residencia:[''],
       email:['', [Validators.email]],
-      clave: ['']
+      clave: [''],
+      cv:['']
 
     })
   }
@@ -72,6 +73,10 @@ export class AboutEditComponent implements OnInit {
 
   get Mail(){
     return this.form.get("email");
+   }
+
+   get Cv(){
+    return this.form.get("cv");
    }
 
    onUpdate():void{

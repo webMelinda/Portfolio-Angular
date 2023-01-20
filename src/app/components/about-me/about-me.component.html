@@ -1,6 +1,6 @@
 <!--About me-->
 
-<section id="sobre mi" class="about me">
+<section id="sobre mi" class="aboutMe">
     <div class="row" *ngFor="let datos of persona" >
       <div class="col-5">
         <img [src]="datos.perfil_img" class="w-100" alt="melindapinto foto">
@@ -34,7 +34,7 @@
             </li>
           </ul>
         </div>
-        <button type="button cv" class="btn btn-light">Descargar CV</button>
+        <a class="btn btn-light" href={{datos.cv}} download="curriculum_Melinda_Pinto.pdf">Descargar CV</a>
       </div>
       </div>
       <div class="col-1"></div>

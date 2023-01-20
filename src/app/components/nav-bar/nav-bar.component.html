@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar  sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="">
           <img src="./assets/IMG/APLogo-20-20.png" alt="" width="20%" height="">
@@ -17,11 +17,15 @@
                 Ir a
               </a>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href= "index/#sobre mi">Sobre Mí</a></li>
-                <li><a class="dropdown-item" href="index/#experiencia">Experiencia Laboral</a></li>
-                <li><a class="dropdown-item" href="index/#educacion">Educación</a></li>
-                <li><a class="dropdown-item" href="index/#habilidades">Habilidades</a></li>
-                <li><a class="dropdown-item" href="index/#proyectos">Proyectos</a></li>
+                <li><h6 class="dropdown-header" *ngIf="modoEdit">Editar Redes</h6></li>
+  <li><a class="dropdown-item" href="#" *ngIf="modoEdit">Agregar</a></li>
+  <li><a class="dropdown-item" href="#" *ngIf="modoEdit">Editar redes existentes</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href= "/#sobre mi">Sobre Mí</a></li>
+                <li><a class="dropdown-item" href="/#experiencia">Experiencia Laboral</a></li>
+                <li><a class="dropdown-item" href="/#educacion">Educación</a></li>
+                <li><a class="dropdown-item" href="/#habilidades">Habilidades</a></li>
+                <li><a class="dropdown-item" href="/#proyectos">Proyectos</a></li>
               </ul>
             </li>
           </ul>

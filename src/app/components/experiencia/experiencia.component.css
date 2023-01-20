@@ -1,7 +1,7 @@
 /*experiencia*/
 .experiencia{
     color: white;
-    padding: 5em;
+    padding: 3.5em;
 }
 
 .experiencia h2{
@@ -13,9 +13,10 @@
 }
 
 .col-7{
-    margin-top: 1.5em;
-    text-align: left;
+    text-align: left;  
 }
+
+
 .modal-title{
     color: black
 }

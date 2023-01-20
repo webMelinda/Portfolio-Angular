@@ -1,3 +1,14 @@
 .card{
     --bs-card-bg: #636464;
+    width: 18rem;
+    float: left; 
+    margin: 1em;
+}
+
+.proyectos{
+    overflow: hidden;
+}
+
+.card-body{
+    color: rgb(238, 234, 234);
 }

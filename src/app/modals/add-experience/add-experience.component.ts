@@ -48,8 +48,8 @@ export class AddExperienceComponent implements OnInit {
   onCreate(): void{
     const expe = new Experiencia(this.institucion, this.puesto, this.periodo, this.logo);
     this.experienciaService.crearExperiencia(expe).subscribe(data => {alert("Experiencia Añadida")
-  window.location.reload();
     });
+    window.location.reload();
   }
 
   limpiar(): void{
