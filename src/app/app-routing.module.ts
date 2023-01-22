@@ -19,18 +19,19 @@ import { AddRedComponent } from './modals/add-red/add-red.component';
 
 
 const routes: Routes = [
-  {path: '', component:IndexComponent,canActivate: [GuardGuard]},
+  {path: '', component:IndexComponent},
+  
+  {path: 'editred/:id', component:RedEditComponent },
+  {path: 'addred', component:AddRedComponent, canActivate: [GuardGuard]},
+  {path: 'editbanner/:id', component:BannerEditComponent, canActivate: [GuardGuard]},
+  {path: 'editabout/:id', component:AboutEditComponent, canActivate: [GuardGuard]},
+  {path: 'editexpe/:id', component:ExperienceEditComponent, canActivate: [GuardGuard]},
+  {path: 'editedu/:id', component:EducationEditComponent, canActivate: [GuardGuard]},
+  {path: 'edittec/:id', component:SkillsEditComponent, canActivate: [GuardGuard]},
+  {path: 'editidioma/:id', component:IdiomaEditComponent, canActivate: [GuardGuard]},
+  {path: 'editsoft/:id', component:SoftEditComponent, canActivate: [GuardGuard]},
+  {path: 'editproject/:id', component:ProjectEditComponent, canActivate: [GuardGuard]},
   {path: 'login', component:LoginComponent},
-  {path: 'editred/:id', component:RedEditComponent,canActivate: [GuardGuard]},
-  {path: 'addred', component:AddRedComponent},
-  {path: 'editbanner/:id', component:BannerEditComponent},
-  {path: 'editabout/:id', component:AboutEditComponent},
-  {path: 'editexpe/:id', component:ExperienceEditComponent},
-  {path: 'editedu/:id', component:EducationEditComponent},
-  {path: 'edittec/:id', component:SkillsEditComponent},
-  {path: 'editidioma/:id', component:IdiomaEditComponent},
-  {path: 'editsoft/:id', component:SoftEditComponent},
-  {path: 'editproject/:id', component:ProjectEditComponent},
   {path: '**', component: ErrorComponent },
 ];
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AutenticacionService } from './autenticacion.service';
 
@@ -8,7 +8,7 @@ import { AutenticacionService } from './autenticacion.service';
   providedIn: 'root'
 })
 export class GuardGuard implements CanActivate {
-  constructor(private autenticacionServicio: AutenticacionService){
+  constructor(private autenticacionServicio: AutenticacionService, private rutas: Router){
 
   }
   canActivate(
@@ -20,10 +20,13 @@ export class GuardGuard implements CanActivate {
         //this.rutas.navigate([''])
         return true;
       }else {
-        //this.rutas.navigate(['login'])
-        return true;
+        this.rutas.navigate([''])
+        alert("Para realizar alguna modificación, debes ir a login primero")
+        return false;
        }
       
   }
+
+  
   
 }
