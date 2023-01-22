@@ -1,0 +1,105 @@
+ <!-- Modal editar-->
+ <form [formGroup]="form"  (ngSubmit)="onEnviar($event)"  class="bg-white rounded p-5">
+    <div class="modal-content">
+    <div class="modal-header" class="mx-auto">
+      <h5 class="modal-title" id="editar">Editar/Eliminar red:</h5>
+    </div>
+    <div class="mx-auto">
+      <ul class="p-0">
+        <li *ngFor="let red of red" class="d-flex justify-content-between align-items-center m-1 ">
+          <input type="hidden" formControlName="id" [ngModel]="red.id">
+          <span>. {{red.nombre}}</span>
+  
+          <span class="d-flex justify-content-between gap-2">
+          <!--Lapiz para editar-->
+            <button type="button" class="btn btn-sm btn-outline-secondary pl-1 pr-1 m-0" (click)="cargarDetalle(red.id)">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <!--Boton para borrar-->
+            <button type="button" class="btn btn-sm btn-outline-secondary pl-1 pr-1 m-0" (click)="eliminar(red.id)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="input-group mb-3 bg-light" *ngIf="!!form.value.id">
+      <input class="form-control" type="hidden" readonly formControlName="id">
+    </div>
+
+    <div class="input-group mb-3 bg-light" *ngIf="!!form.value.nombre">
+      <div class="input-group-prepend border-0">
+        <span class="input-group-text" id="basic-addon1">Nombre:</span>
+      </div>
+      <input class="form-control" type="text" [ngClass]="{'is-invalid': Icono.errors && Icono.touched, 'is-valid': !Icono.errors && Icono.touched}"  formControlName="nombre">
+    </div>
+    <div *ngIf="Nombre?.errors  && Nombre?.touched">    
+      <h6 *ngIf="Nombre?.hasError('required')" class="error">
+          El Nombre es requerido.
+      </h6>
+  </div>
+
+    <div class="input-group mb-3 bg-light" *ngIf="!!form.value.url">
+      <div class="input-group-prepend border-0">
+        <span class="input-group-text" id="basic-addon1">url</span>
+      </div>
+      <input class="form-control" type="text"  formControlName="url">
+    </div>
+    <div *ngIf="Nombre?.errors  && Nombre?.touched">    
+      <h6 *ngIf="Nombre?.hasError('required')" class="error">
+          La url es requerida.
+      </h6>
+  </div>
+
+    <div class="input-group mb-3 bg-light" *ngIf="!!form.value.icono">
+      <div class="input-group-prepend border-0">
+        <span class="input-group-text" id="basic-addon1">Icono:</span>
+      </div>
+      <input aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"class="form-control" type="text"  formControlName="icono">
+    </div>
+    <div *ngIf="Nombre?.errors  && Nombre?.touched">    
+      <h6 *ngIf="Nombre?.hasError('required')" class="error">
+          El Icono es requerido.
+      </h6>
+  </div>
+
+    
+   
+        <!-- <div class="modal-body" >
+          <input  formControlName="id" *ngIf="!!form.value.id">
+          <div class="mb-3">
+              <label for="formFileMultiple" class="form-label">Selecciona un ícono (Font Awesome)</label>
+              <input *ngIf="!!form.value.icono" class="form-control" type="text" formControlName="icono" multiple [ngClass]="{'is-invalid': Icono.errors && Icono.touched, 'is-valid': !Icono.errors && Icono.touched}">
+          </div>
+          <div *ngIf="Icono?.errors  && Icono?.touched">    
+            <h6 *ngIf="Icono?.hasError('required')" class="error">
+                La Icono es requerida.
+            </h6>
+        </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+            <input *ngIf="!!form.value.nombre" type="text" formControlName="nombre" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div *ngIf="Nombre?.errors  && Nombre?.touched">    
+            <h6 *ngIf="Nombre?.hasError('required')" class="error">
+                El Nombre es requerido.
+            </h6>
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">url</span>
+          <input *ngIf="!!form.value.url" type="text" formControlName="url" [ngClass]="{'is-invalid': Url.errors && Url.touched, 'is-valid': !Url.errors && Url.touched}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div *ngIf="Url?.errors  && Url?.touched">    
+          <h6 *ngIf="Url?.hasError('required')" class="error">
+              El Url del usuario es requerido.
+          </h6>
+      </div>
+        </div> -->
+       
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-secondary" routerLink="">Cancelar</button>
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onUpdate()">Guardar</button>
+      </div>
+  </div>
+</form>

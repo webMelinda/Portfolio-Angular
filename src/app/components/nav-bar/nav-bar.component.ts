@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { About } from 'src/app/model/about';
+import { Red } from 'src/app/model/red';
 import { AboutService } from 'src/app/servicios/about.service';
 import { DatosService } from 'src/app/servicios/datos.service';
+import { RedService } from 'src/app/servicios/red.service';
 
 
 @Component({
@@ -10,16 +12,14 @@ import { DatosService } from 'src/app/servicios/datos.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  red: any = [];
+  red: Red[] = [];
   persona: About[] = [];
   modoEdit: Boolean = false
   
 
-  constructor(private datos:DatosService, private aboutService: AboutService) { }
+  constructor(private redService: RedService, private aboutService: AboutService) { }
 
-  ngOnInit(): void {this.datos.getDatos().subscribe(data =>{
-    this.red = data.redes;
-  });
+  ngOnInit(): void {this.redService.verReds().subscribe(data =>{this.red= data});
 
   this.aboutService.verPersonas().subscribe(data =>{
     this.persona = data

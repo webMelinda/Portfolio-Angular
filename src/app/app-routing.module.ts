@@ -12,13 +12,17 @@ import { LoginComponent } from './modals/login/login.component';
 import { ProjectEditComponent } from './modals/project-edit/project-edit.component';
 import { SkillsEditComponent } from './modals/skills-edit/skills-edit.component';
 import { SoftEditComponent } from './modals/soft-edit/soft-edit.component';
+import { RedEditComponent } from './modals/red-edit/red-edit.component';
+import { AddRedComponent } from './modals/add-red/add-red.component';
 
 
 
 
 const routes: Routes = [
-  {path: '', component:IndexComponent, canActivate: [GuardGuard]},
+  {path: '', component:IndexComponent,canActivate: [GuardGuard]},
   {path: 'login', component:LoginComponent},
+  {path: 'editred/:id', component:RedEditComponent,canActivate: [GuardGuard]},
+  {path: 'addred', component:AddRedComponent},
   {path: 'editbanner/:id', component:BannerEditComponent},
   {path: 'editabout/:id', component:AboutEditComponent},
   {path: 'editexpe/:id', component:ExperienceEditComponent},

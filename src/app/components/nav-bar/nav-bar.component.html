@@ -5,7 +5,7 @@
           <img src="./assets/IMG/APLogo-20-20.png" alt="" width="20%" height="">
         </a>
         <ul class="navbar-nav" *ngFor="let contacto of red">
-          <li class="nav-item"><a class="nav-link" href={{contacto.url}} target="_blank"><i class={{contacto.icon}}></i></a></li>
+          <li class="nav-item"><a class="nav-link" href={{contacto.url}} target="_blank"><i class={{contacto.icono}}></i></a></li>
           </ul> 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -16,10 +16,10 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Ir a
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark">
+              <ul class="dropdown-menu dropdown-menu-dark"*ngFor="let red of red">
                 <li><h6 class="dropdown-header" *ngIf="modoEdit">Editar Redes</h6></li>
-  <li><a class="dropdown-item" href="#" *ngIf="modoEdit">Agregar</a></li>
-  <li><a class="dropdown-item" href="#" *ngIf="modoEdit">Editar redes existentes</a></li>
+  <li><a class="dropdown-item" routerLink="addred" *ngIf="modoEdit">Agregar</a></li>
+  <li><a class="dropdown-item" routerLink="editred/{{red.id}}" *ngIf="modoEdit">Editar redes existentes</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href= "/#sobre mi">Sobre Mí</a></li>
                 <li><a class="dropdown-item" href="/#experiencia">Experiencia Laboral</a></li>

@@ -1,0 +1,43 @@
+<form [formGroup]="form"  (ngSubmit)="onEnviar($event)" class="bg-white rounded p-5">
+    <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="editar">Editar contenido</h5>
+    </div>
+    
+        <div class="modal-body">
+
+          <div class="mb-3">
+              <label for="formFileMultiple" class="form-label">Selecciona un ícono (Font Awesome)</label>
+              <input  class="form-control" type="url" formControlName="icono" multiple [ngClass]="{'is-invalid': Icono.errors && Icono.touched, 'is-valid': !Icono.errors && Icono.touched}">
+          </div>
+          <div *ngIf="Icono?.errors  && Icono?.touched">    
+            <h6 *ngIf="Icono?.hasError('required')" class="error">
+                La Icono es requerida.
+            </h6>
+        </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+            <input  type="text" formControlName="nombre" [ngClass]="{'is-invalid': Nombre.errors && Nombre.touched, 'is-valid': !Nombre.errors && Nombre.touched}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div *ngIf="Nombre?.errors  && Nombre?.touched">    
+            <h6 *ngIf="Nombre?.hasError('required')" class="error">
+                El Nombre es requerido.
+            </h6>
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-sm">url</span>
+          <input  type="text" formControlName="url" [ngClass]="{'is-invalid': Url.errors && Url.touched, 'is-valid': !Url.errors && Url.touched}" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+        </div>
+        <div *ngIf="Url?.errors  && Url?.touched">    
+          <h6 *ngIf="Url?.hasError('required')" class="error">
+              El Url del usuario es requerido.
+          </h6>
+      </div>
+        </div>
+       
+      <div class="modal-footer" >
+        <button type="button" class="btn btn-secondary" routerLink="">Cancelar</button>
+        <button type="submit" class="btn btn-secondary">Guardar</button>
+      </div>
+  </div>
+</form>

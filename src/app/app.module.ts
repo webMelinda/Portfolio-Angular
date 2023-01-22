@@ -35,6 +35,8 @@ import { SoftEditComponent } from './modals/soft-edit/soft-edit.component';
 import { InterceptorService } from './servicios/interceptor.service';
 import { UsuarioService } from './servicios/usuario.service';
 import { AboutService } from './servicios/about.service';
+import { RedEditComponent } from './modals/red-edit/red-edit.component';
+import { AddRedComponent } from './modals/add-red/add-red.component';
 
 
 @NgModule({
@@ -67,6 +69,8 @@ import { AboutService } from './servicios/about.service';
     AddSoftComponent,
     IdiomaEditComponent,
     SoftEditComponent,
+    RedEditComponent,
+    AddRedComponent,
    
   ],
   imports: [
