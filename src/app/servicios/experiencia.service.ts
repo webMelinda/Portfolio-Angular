@@ -7,7 +7,7 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  ruta = 'http://localhost:8080/experiencia/';
+  ruta = 'https://argenprogram-backend.onrender.com/experiencia/';
   constructor(private http: HttpClient) { }
 
   public verExperiencias(): Observable<Experiencia[]>{

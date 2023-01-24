@@ -7,7 +7,7 @@ import { Proyecto } from '../model/proyecto';
   providedIn: 'root'
 })
 export class ProyectoService {
-  ruta = 'http://localhost:8080/proyecto/';
+  ruta = 'https://argenprogram-backend.onrender.com/proyecto/';
 
   constructor(private http: HttpClient) { }
 

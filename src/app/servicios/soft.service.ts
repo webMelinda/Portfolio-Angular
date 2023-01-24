@@ -7,7 +7,7 @@ import { Soft } from '../model/soft';
   providedIn: 'root'
 })
 export class SoftService {
-  ruta = 'http://localhost:8080/soft/';
+  ruta = 'https://argenprogram-backend.onrender.com/soft/';
 
   constructor(private http: HttpClient) { }
 

@@ -7,7 +7,7 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  ruta = 'http://localhost:8080/educacion/';
+  ruta = 'https://argenprogram-backend.onrender.com/educacion/';
 
   constructor(private http: HttpClient) { }
 

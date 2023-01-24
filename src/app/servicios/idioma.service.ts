@@ -7,7 +7,7 @@ import { Idioma } from '../model/idioma';
   providedIn: 'root'
 })
 export class IdiomaService {
-  ruta = 'http://localhost:8080/idioma/';
+  ruta = 'https://argenprogram-backend.onrender.com/idioma/';
 
   constructor(private http: HttpClient) { }
 

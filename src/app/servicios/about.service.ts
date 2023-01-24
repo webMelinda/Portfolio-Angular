@@ -8,7 +8,7 @@ import { About } from '../model/about';
   providedIn: 'root'
 })
 export class AboutService {
-  ruta = 'http://localhost:8080/persona/';
+  ruta = 'https://argenprogram-backend.onrender.com/persona/';
 
   constructor(private http: HttpClient) { }
 

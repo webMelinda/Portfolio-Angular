@@ -6,7 +6,7 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  ruta = 'http://localhost:8080/persona/autenticacion/login';
+  ruta = 'https://argenprogram-backend.onrender.com/persona/autenticacion/login';
   currentUserSubject:BehaviorSubject<any>;
   //sessionStorage: any;
 

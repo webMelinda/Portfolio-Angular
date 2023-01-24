@@ -7,7 +7,7 @@ import { Tecnica } from '../model/tecnica';
   providedIn: 'root'
 })
 export class TecnicaService {
-  ruta = 'http://localhost:8080/tecnica/';
+  ruta = 'https://argenprogram-backend.onrender.com/tecnica/';
 
   constructor(private http: HttpClient) { }
 

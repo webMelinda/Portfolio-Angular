@@ -8,7 +8,7 @@ import { Banner } from '../model/banner';
 })
 
 export class BannerService {
-  ruta = 'http://localhost:8080/banner/';
+  ruta = 'https://argenprogram-backend.onrender.com/banner/';
 
   constructor(private http: HttpClient) { }
 

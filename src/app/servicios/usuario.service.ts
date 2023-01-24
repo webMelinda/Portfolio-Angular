@@ -8,7 +8,7 @@ import { Usuario } from '../model/usuario';
 })
 export class UsuarioService {
 
-  ruta = 'http://localhost:8080/usuario/';
+  ruta = 'https://argenprogram-backend.onrender.com/usuario/';
 
   constructor(private http: HttpClient) { }
   public verUsuarios(): Observable<Usuario[]>{

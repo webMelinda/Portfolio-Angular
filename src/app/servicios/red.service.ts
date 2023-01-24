@@ -7,7 +7,7 @@ import { Red } from '../model/red';
   providedIn: 'root'
 })
 export class RedService {
-  ruta = 'http://localhost:8080/red/';
+  ruta = 'https://argenprogram-backend.onrender.com/red/';
 
   constructor(private http: HttpClient) { }
 
