@@ -1,11 +1,12 @@
 <!--About me-->
 
 <section id="sobre mi" class="aboutMe">
-    <div class="row" *ngFor="let datos of persona" >
+  <div class="container-fluid">
+    <div class="row align-items-center" *ngFor="let datos of persona" >
       <div class="col-5">
         <img [src]="datos.perfil_img" class="w-100" alt="melindapinto foto">
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <button *ngIf="modoEdit" type="button" class="btn btn-secondary" routerLink="editabout/{{datos.id}}" >
           <i class="fa-solid fa-pen-to-square"></i>
         </button>
@@ -13,7 +14,6 @@
         <div class="divider"></div>
         <p>{{datos.about}}</p>
       <div class="fila">
-        <div class="col">
           <h3>Datos Personales</h3>
           <ul>
             <li>

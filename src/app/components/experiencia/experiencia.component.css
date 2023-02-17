@@ -9,14 +9,31 @@
 }
 .imglogo{
     min-width: 5em;
-    margin-left: -3em;
+    margin-left: -4em;
 }
 
-.col-7{
+.col-md-7{
+    margin-top: 0;
     text-align: left;  
 }
 
 
 .modal-title{
     color: black
+}
+
+@media screen and (orientation: portrait){
+    .experiencia-laboral{
+        margin-left: -1em;
+    }
+
+    .lista{
+        margin-left: -3em;
+        text-align: left;
+    }
+
+    .col-md-7{
+        margin-top: 1em;
+        text-align: left;  
+    }
 }

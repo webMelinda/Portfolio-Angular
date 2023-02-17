@@ -1,7 +1,7 @@
 <!--Experiencia-->
 
 <section id="experiencia" class="experiencia">
-  <div class="experiencia laboral">
+  <div class="experiencia-laboral">
     <h2><strong>Experiencia Laboral </strong><app-add-experience *ngIf="modoEdit"></app-add-experience></h2>
     <div class="divider"></div>
   </div>
@@ -10,12 +10,12 @@
       <div class="col-2">
       </div>
       <div class="col-2"><img [src]="trabajo.logo" class="w-75 imglogo" alt="uap"></div>
-      <div class="col-7"><h4><strong>{{trabajo.institucion}} </strong> <button *ngIf="modoEdit" type="submit" class="btn btn-secondary" (click)="eliminar(trabajo.id)" ><i class="fa-solid fa-trash-can"></i></button><!-- Button trigger modal Experiencia laboral-->
+      <div class="col-md-7"><h4><strong>{{trabajo.institucion}} </strong> <button *ngIf="modoEdit" type="submit" class="btn btn-secondary" (click)="eliminar(trabajo.id)" ><i class="fa-solid fa-trash-can"></i></button><!-- Button trigger modal Experiencia laboral-->
         <button *ngIf="modoEdit" type="button" class="btn btn-secondary" routerLink="editexpe/{{trabajo.id}}">
             <i class="fa-solid fa-pen-to-square"></i>
           </button></h4>({{trabajo.periodo}})
         <ul>
-          <li>{{trabajo.puesto}}</li>
+          <li class="lista">{{trabajo.puesto}}</li>
         </ul><br><br>
       </div>
       <div class="col-1"></div>

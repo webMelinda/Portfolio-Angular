@@ -25,3 +25,9 @@ body {
 .edu h2{
         font-size: 2.5em;
     }
+
+    @media screen and (orientation: portrait){
+        .edu{
+            margin-left: 0;
+        }
+    }

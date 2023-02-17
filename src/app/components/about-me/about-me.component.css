@@ -1,20 +1,13 @@
 /*About me*/
 
 
-.col-6{
-    padding: 2rem;
-    margin-top: 5em;
-}
-
-
-
 .col ul li strong{
     display: inline-block;
     color: rgb(165, 42, 73);
-    width: 110px;
 }
 
 .btn-light{
     margin: 50px;
 }
+
 

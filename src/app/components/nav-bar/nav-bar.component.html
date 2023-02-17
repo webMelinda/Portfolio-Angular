@@ -1,44 +1,42 @@
 
-<nav class="navbar  sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="">
-          <img src="./assets/IMG/APLogo-20-20.png" alt="" width="20%" height="">
-        </a>
-        <ul class="navbar-nav" *ngFor="let contacto of red">
-          <li class="nav-item"><a class="nav-link" href={{contacto.url}} target="_blank"><i class={{contacto.icono}}></i></a></li>
-          </ul> 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+      <img src="./assets/IMG/APLogo-20-20.png" alt="Logo" width="100" height="64" class="d-inline-block align-text-top">
+    </a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <div class="navbar-nav me-auto">
+            <div class="nav-item dropdown">
+              <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Ir a
               </a>
-              <ul class="dropdown-menu dropdown-menu-dark"*ngFor="let red of red">
-                <li><h6 class="dropdown-header" *ngIf="modoEdit">Editar Redes</h6></li>
-  <li><a class="dropdown-item" routerLink="addred" *ngIf="modoEdit">Agregar</a></li>
-  <li><a class="dropdown-item" routerLink="editred/{{red.id}}" *ngIf="modoEdit">Editar redes existentes</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href= "/#sobre mi">Sobre Mí</a></li>
-                <li><a class="dropdown-item" href="/#experiencia">Experiencia Laboral</a></li>
-                <li><a class="dropdown-item" href="/#educacion">Educación</a></li>
-                <li><a class="dropdown-item" href="/#habilidades">Habilidades</a></li>
-                <li><a class="dropdown-item" href="/#proyectos">Proyectos</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <button *ngIf="!modoEdit" type="button" class="btn btn-outline-light" routerLink="login">
+              <div class="dropdown-menu dropdown-menu-dark"*ngFor="let red of red">
+                <a><h6 class="dropdown-header" *ngIf="modoEdit">Editar Redes</h6></a>
+                  <a class="dropdown-item" routerLink="addred" *ngIf="modoEdit">Agregar</a>
+                  <a class="dropdown-item" routerLink="editred/{{red.id}}" *ngIf="modoEdit">Editar redes existentes</a>
+                <hr class="dropdown-divider">
+                <a class="dropdown-item" href= "/#sobre mi">Sobre Mí</a>
+                <a class="dropdown-item" href="/#experiencia">Experiencia Laboral</a>
+                <a class="dropdown-item" href="/#educacion">Educación</a>
+                <a class="dropdown-item" href="/#habilidades">Habilidades</a>
+                <a class="dropdown-item" href="/#proyectos">Proyectos</a>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-nav d-inline-flex p-2" *ngFor="let contacto of red">
+              <a class="nav-link" href={{contacto.url}} target="_blank"><i class={{contacto.icono}}></i></a>
+          </div> 
+      </div>
+  
+      <button *ngIf="!modoEdit" type="button" class="btn btn-outline-light" routerLink="login">
           Login
-      </button>
+          </button>
         <button *ngIf="modoEdit" type="button" class="btn btn-outline-light" (click)="cerrarSesion()">
           Logout 
-          </button>
-     
-</div>
-
-             
- 
-
+      </button>
+    </div>
+  
+</nav>
