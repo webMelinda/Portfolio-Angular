@@ -3,10 +3,11 @@
 Este Proyecto Integrador se realizó en el marco del curso Yo Programo de Argentina Programa, en el cual se desarrolló un portafolio web que contiene datos personales, estudios cursados, experiencia laboral, conocimientos y habilidades, entre otros.
 
 
-## :wrench:Tecnologías usadas
-Angular [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
-Font Awesome
-Bootstrap5
+## :wrench:Tecnologías usadas:
+•	Angular[Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+•	FontAwsome
+•	Bootstrap5
+
 
 ## :white_check_mark:Contenido y funcionamiento:
 
