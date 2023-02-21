@@ -31,3 +31,7 @@ body {
             margin-left: 0;
         }
     }
+
+section[id]{
+    scroll-margin-top:75px ;
+}

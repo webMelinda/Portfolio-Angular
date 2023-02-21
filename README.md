@@ -1,8 +1,20 @@
-# ProyectoPortfolio
+# :clipboard:Proyecto Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Este Proyecto Integrador se realizó en el marco del curso Yo Programo de Argentina Programa, en el cual se desarrolló un portafolio web que contiene datos personales, estudios cursados, experiencia laboral, conocimientos y habilidades, entre otros.
 
-## Development server
+
+## :wrench:Tecnologías usadas
+Angular [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Font Awesome
+Bootstrap5
+
+## :white_check_mark:Contenido y funcionamiento:
+
+Al acceder al portafolio podrás navegar en él y ver las diferentes secciones entre las que se encuentran: sobre mí, experiencia laboral, educación, habilidades e idiomas y proyectos realizados. También se puede editar el contenido, eliminar o agregar datos, pero esto solamente se podrá hacer accediendo desde el botón login con usuario y contraseña correctos. De esta manera se activarán los botones de edición.
+
+
+## More about Angular:
+## Development Server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
@@ -25,3 +37,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+# :wave:Gracias por visitar mi Repo!
