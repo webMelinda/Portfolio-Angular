@@ -15,9 +15,7 @@ import { HabilidadesComponent } from './components/habilidades/habilidades.compo
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErrorComponent } from './components/error/error.component';
-import { ButtonLoginComponent } from './components/button-login/button-login.component';
 import { IndexComponent } from './components/index/index.component';
-import { ButtonLogoutComponent } from './components/button-logout/button-logout.component';
 import { AddEduComponent } from './modals/add-edu/add-edu.component';
 import { BannerEditComponent } from './modals/banner-edit/banner-edit.component';
 import { AboutEditComponent } from './modals/about-edit/about-edit.component';
@@ -52,9 +50,7 @@ import { AddRedComponent } from './modals/add-red/add-red.component';
     ProyectosComponent,
     FooterComponent,
     ErrorComponent,
-    ButtonLoginComponent,
     IndexComponent,
-    ButtonLogoutComponent,
     AddEduComponent,
     BannerEditComponent,
     AboutEditComponent,
