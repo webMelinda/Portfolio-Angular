@@ -31,13 +31,18 @@ export class AddIdiomaComponent implements OnInit {
      return this.form.get("rango");
     }
  
-   
-   onCreate(): void{
+  
+  onCreate(): void{
+    this.agregar();
+   window.location.reload();
+     
+   }
+ 
+   agregar(): void{
     const idiom = new Idioma(this.nombre, this.porcentaje);
     this.idiomaService.crearIdioma(idiom).subscribe(data => {alert("Técnica Añadida")
     });
-    window.location.reload();
-  }
+   }
 
   limpiar(): void{
     this.form.reset();

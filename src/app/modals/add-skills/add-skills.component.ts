@@ -33,14 +33,17 @@ export class AddSkillsComponent implements OnInit {
    }
 
  
-
   onCreate(): void{
+    this.agregar();
+   window.location.reload();
+     
+   }
+ 
+   agregar(): void{
     const tec = new Tecnica(this.nombre, this.porcentaje);
     this.tecnicaService.crearTecnica(tec).subscribe(data => {alert("Técnica Añadida");
     });
-    window.location.reload();
-    
-  }
+   }
 
   limpiar(): void{
     this.form.reset();

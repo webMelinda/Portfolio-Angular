@@ -38,6 +38,6 @@ export class EducacionComponent implements OnInit {
           data =>{
             this.ngOnInit();
           })
-      } window.location.reload(); 
+      } //window.location.reload(); 
       }}
 }

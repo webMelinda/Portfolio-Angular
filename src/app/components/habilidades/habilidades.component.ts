@@ -24,9 +24,9 @@ export class HabilidadesComponent implements OnInit {
   constructor(public tecnicaService: TecnicaService, public idiomaService: IdiomaService, public softService: SoftService, private aboutService: AboutService) { }
 
   ngOnInit(): void {
-  this.tecnicaService.verTecnicas().subscribe(data => {this.tecnica = data});
-  this.idiomaService.verIdiomas().subscribe(data => {this.idioma = data});
-  this.softService.verSofts().subscribe(data => {this.soft = data});
+  this.cargarTecnica();
+  this.cargarIdioma();
+  this.cargarSoft();
   this.aboutService.verPersonas().subscribe(data => {this.persona = data});
   
   if (sessionStorage.getItem('currentUser') == "null"){
@@ -38,6 +38,29 @@ export class HabilidadesComponent implements OnInit {
   }
   }
 
+  cargarTecnica(): void {
+    this.tecnicaService.verTecnicas().subscribe(
+      data => {
+        this.tecnica = data;
+      }
+    )
+  }
+
+  cargarIdioma(): void {
+    this.idiomaService.verIdiomas().subscribe(
+      data => {
+        this.idioma = data;
+      }
+    )
+  }
+
+cargarSoft(): void {
+  this.softService.verSofts().subscribe(
+    data => {
+      this.soft = data
+    }
+  )
+}
 
   eliminar(id?: number){
     if(id !=undefined){
@@ -46,7 +69,7 @@ export class HabilidadesComponent implements OnInit {
           data =>{
             this.ngOnInit();
           })
-      } window.location.reload(); 
+      } //window.location.reload(); 
       }}
   
  eliminarIdioma(id?: number){
@@ -56,7 +79,7 @@ export class HabilidadesComponent implements OnInit {
           data =>{
             this.ngOnInit();
           })
-      } window.location.reload(); 
+      } //window.location.reload(); 
     }}
 
     eliminarTecnica(id?: number){
@@ -66,7 +89,7 @@ export class HabilidadesComponent implements OnInit {
             data =>{
               this.ngOnInit();
             })
-        } window.location.reload(); 
+        } //window.location.reload(); 
       }}
     
 }
