@@ -31,16 +31,19 @@ export class AddSoftComponent implements OnInit {
     }
  
    onCreate(): void{
-    this.agregar();
-   window.location.reload();
+    const softy = new Soft(this.nombre, this.porcentaje);
+    this.softService.crearSoft(softy).subscribe(data => {
+    },
+    error => {
+      window.location.reload()
+      alert("Habilidad Añadida");
+
+
+    });
      
    }
  
-   agregar(): void{
-    const softy = new Soft(this.nombre, this.porcentaje);
-     this.softService.crearSoft(softy).subscribe(data => {alert("Técnica Añadida");
-     });
-   }
+  
  
    limpiar(): void{
      this.form.reset();

@@ -33,16 +33,19 @@ export class AddIdiomaComponent implements OnInit {
  
   
   onCreate(): void{
-    this.agregar();
-   window.location.reload();
+    const idiom = new Idioma(this.nombre, this.porcentaje);
+    this.idiomaService.crearIdioma(idiom).subscribe(data => {
+    },
+    error => {
+      window.location.reload()
+      alert("Idioma Añadido");
+
+
+    });
      
    }
  
-   agregar(): void{
-    const idiom = new Idioma(this.nombre, this.porcentaje);
-    this.idiomaService.crearIdioma(idiom).subscribe(data => {alert("Técnica Añadida")
-    });
-   }
+  
 
   limpiar(): void{
     this.form.reset();

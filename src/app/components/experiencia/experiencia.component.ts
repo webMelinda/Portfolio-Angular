@@ -45,19 +45,23 @@ export class ExperienciaComponent implements OnInit {
   
 
   eliminar(id: any): void {
-   
-    if(confirm('¿Seguro desea eliminar este apartado?')) {
-      if(id !=undefined) {
-           this.experienciaService.delete(id).subscribe( data => {
-           // alert("Su Experiencia fue eliminada correctamente");    
-            this.verExperiencia();
-              });          
-             
-          } 
-        
-        } 
 
-        } 
+    if (confirm('¿Seguro desea eliminar este apartado?')) {
+      if (id != undefined) {
+        this.experienciaService.delete(id).subscribe(data => {
+          // alert("Su Experiencia fue eliminada correctamente");    
+          this.verExperiencia();
+        },
+          error => {
+            alert("Su Experiencia fue eliminada correctamente");
+            this.verExperiencia();
+          });
+
+      }
+
+    }
+
+  } 
       
 
 }

@@ -1,5 +1,5 @@
 
-<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,12 +18,20 @@
                   <a class="dropdown-item" routerLink="addred" *ngIf="modoEdit">Agregar</a>
                   <a class="dropdown-item" routerLink="editred/{{red.id}}" *ngIf="modoEdit">Editar redes existentes</a>
                 <hr class="dropdown-divider">
-                <a class="dropdown-item" href= "/#sobre mi">Sobre Mí</a>
-                <a class="dropdown-item" href="/#experiencia">Experiencia Laboral</a>
-                <a class="dropdown-item" href="/#educacion">Educación</a>
-                <a class="dropdown-item" href="/#habilidades">Habilidades</a>
-                <a class="dropdown-item" href="/#proyectos">Proyectos</a>
-              </div>
+
+                <a class="dropdown-item" href="/#sobre mi"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Sobre
+                  Mí</span></a>
+              <a class="dropdown-item" href="/#experiencia"><span data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show">Experiencia Laboral</span></a>
+              <a class="dropdown-item" href="/#educacion"><span data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show">Educación</span></a>
+              <a class="dropdown-item" href="/#habilidades"><span data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show">Habilidades</span></a>
+              <a class="dropdown-item" href="/#proyectos"><span data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show">Proyectos</span></a>
+                
+              </div> 
+              
             </div>
           </div>
           <div class="navbar-nav d-inline-flex p-2" *ngFor="let contacto of red">

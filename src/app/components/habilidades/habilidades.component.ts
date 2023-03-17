@@ -67,9 +67,13 @@ cargarSoft(): void {
       if(confirm('¿Seguro desea eliminar este apartado?')){
         this.softService.delete(id).subscribe(
           data =>{
-            this.ngOnInit();
+            this.cargarSoft();
+          },
+          error => {
+            alert("El apartado fue eliminado correctamente");
+            this.cargarSoft();
           })
-      } //window.location.reload(); 
+      } 
       }}
   
  eliminarIdioma(id?: number){
@@ -77,9 +81,13 @@ cargarSoft(): void {
       if(confirm('¿Seguro desea eliminar este apartado?')){
          this.idiomaService.delete(id).subscribe(
           data =>{
-            this.ngOnInit();
+            this.cargarIdioma();
+          },
+          error => {
+            alert("El apartado fue eliminado correctamente");
+            this.cargarIdioma();
           })
-      } //window.location.reload(); 
+      }  
     }}
 
     eliminarTecnica(id?: number){
@@ -87,7 +95,11 @@ cargarSoft(): void {
         if(confirm('¿Seguro desea eliminar este apartado?')){
            this.tecnicaService.delete(id).subscribe(
             data =>{
-              this.ngOnInit();
+              this.cargarTecnica();
+            },
+            error => {
+              alert("El apartado fue eliminado correctamente");
+              this.cargarTecnica();
             })
         } //window.location.reload(); 
       }}

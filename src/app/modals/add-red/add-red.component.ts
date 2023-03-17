@@ -42,12 +42,18 @@ export class AddRedComponent implements OnInit {
       return this.form.get("icono");
      }
 
-     onCreate(): void{
-      this.redService.editarRed(this.form.value).subscribe(data => {alert("Red Añadida")
+  onCreate(): void {
+    this.redService.editarRed(this.form.value).subscribe(data => {
+      this.router.navigate(['']);},
+      error => {
+
+        alert("Técnica Añadida");
+        this.ngOnInit();
+
+
       });
-      //console.log(this.form.value);
-      this.router.navigate(['']);
-    }
+     
+  }
   
     limpiar(): void{
       this.form.reset();

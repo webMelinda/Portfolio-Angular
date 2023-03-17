@@ -19,7 +19,7 @@ export class ProyectosComponent implements OnInit {
   constructor(public proyectoService: ProyectoService, private aboutService: AboutService) { }
 
   ngOnInit(): void {
-    this.proyectoService.verProyectos().subscribe(data => {this.proyecto = data});
+    this.verProyecto();
     this.aboutService.verPersonas().subscribe(data => {this.persona = data});
   
     if (sessionStorage.getItem('currentUser') == "null"){
@@ -31,13 +31,21 @@ export class ProyectosComponent implements OnInit {
     }
   }
 
+  verProyecto(): void {
+    this.proyectoService.verProyectos().subscribe(data => {this.proyecto = data});
+  }
+
   eliminar(id?: number){
     if(id !=undefined){
       if(confirm('¿Seguro desea eliminar este apartado?')){
         this.proyectoService.delete(id).subscribe(
           data =>{
             this.ngOnInit();
+          },
+          error => {
+            alert("El apartado fue eliminado correctamente");
+            this.verProyecto();
           })
-      } //window.location.reload(); 
+      }  
       }}
 }

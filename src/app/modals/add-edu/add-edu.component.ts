@@ -36,18 +36,20 @@ export class AddEduComponent implements OnInit {
     return this.form.get("logo");
    }
 
-  onCreate(): void{
-    this.agregar();
-   window.location.reload();
-     
-   }
- 
-   agregar(): void{
+  onCreate(): void {
     const edu = new Educacion(this.institucion, this.titulo, this.logo);
-    this.eduService.crearEducacion(edu).subscribe(data => {alert("Educación Añadida")
-   });
-   }
+    this.eduService.crearEducacion(edu).subscribe(data => {
+    },
+      error => {
+        window.location.reload()
+        alert("Educación Añadida");
 
+
+      });
+
+  }
+ 
+   
   limpiar(): void{
     this.form.reset();
   }

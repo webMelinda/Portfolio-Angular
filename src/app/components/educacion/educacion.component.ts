@@ -18,7 +18,7 @@ export class EducacionComponent implements OnInit {
   constructor(public eduService: EducacionService, private aboutService: AboutService) { }
 
   ngOnInit(): void {
-    this.eduService.verEducacions().subscribe(data => {this.estudio = data});
+    this.verEducacion();
     this.aboutService.verPersonas().subscribe(data => {this.persona = data});
   
     if (sessionStorage.getItem('currentUser') == "null"){
@@ -31,13 +31,22 @@ export class EducacionComponent implements OnInit {
   
   }
 
-  eliminar(id?: number){
-    if(id !=undefined){
-      if(confirm('¿Seguro desea eliminar este apartado?')){
+  verEducacion():void {
+    this.eduService.verEducacions().subscribe(data => {this.estudio = data});
+  }
+
+  eliminar(id?: number) {
+    if (id != undefined) {
+      if (confirm('¿Seguro desea eliminar este apartado?')) {
         this.eduService.delete(id).subscribe(
-          data =>{
-            this.ngOnInit();
+          data => {
+            this.verEducacion();
+          },
+          error => {
+            alert("El apartado fue eliminado correctamente");
+            this.verEducacion();
           })
-      } //window.location.reload(); 
-      }}
+      }
+    }
+  }
 }

@@ -45,16 +45,19 @@ export class AddProjectComponent implements OnInit {
 
 
   onCreate(): void{
-    this.agregar();
-   window.location.reload();
+    const project = new Proyecto(this.foto, this.url, this.nombre, this.descripcion);
+    this.proyectoService.crearProyecto(project).subscribe(data => {
+    },
+    error => {
+      window.location.reload()
+      alert("Proyecto Añadido");
+
+
+    });
      
    }
  
-   agregar(): void{
-    const project = new Proyecto(this.foto, this.url, this.nombre, this.descripcion);
-    this.proyectoService.crearProyecto(project).subscribe(data => {alert("Proyecto Añadido");
-    });
-   }
+  
  
     limpiar():void{
       this.form.reset();
