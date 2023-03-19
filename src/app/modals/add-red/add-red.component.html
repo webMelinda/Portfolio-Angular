@@ -7,7 +7,7 @@
         <div class="modal-body">
 
           <div class="mb-3">
-              <label for="formFileMultiple" class="form-label">Selecciona un ícono (Font Awesome)</label>
+              <label for="formFileMultiple" class="form-label">Selecciona un ícono (Font Awesome tamaño fa-xl)</label>
               <input  class="form-control" type="url" formControlName="icono" multiple [ngClass]="{'is-invalid': Icono.errors && Icono.touched, 'is-valid': !Icono.errors && Icono.touched}">
           </div>
           <div *ngIf="Icono?.errors  && Icono?.touched">    

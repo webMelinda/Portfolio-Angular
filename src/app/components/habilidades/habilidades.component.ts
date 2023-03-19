@@ -101,7 +101,7 @@ cargarSoft(): void {
               alert("El apartado fue eliminado correctamente");
               this.cargarTecnica();
             })
-        } //window.location.reload(); 
+        }  
       }}
     
 }

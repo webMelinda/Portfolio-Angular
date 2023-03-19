@@ -81,33 +81,17 @@ export class RedEditComponent implements OnInit {
         if (confirm('¿Seguro desea eliminar este apartado?')) {
           this.redService.delete(id).subscribe(
             data => {
-              this.router.navigate(['']);
+              
             },
             error => {
               alert("El apartado fue eliminado correctamente");
-              this.cargarRed();
+              this.router.navigate(['']);
             })
+            
         }   
       }
     }
   
-  // eliminar(id?: number) {
-  //   if (id != undefined) {
-  //     if (confirm('¿Seguro desea eliminar este apartado?')) {
-  //       this.redService.delete(id).subscribe(
-  //         data => {
-  //           this.ngOnInit();
-  //         },
-  //         error => {
-  //           alert("El apartado fue eliminado correctamente");
-  //           this.cargarRed();
-  //         })
-  //     } this.router.navigate(['']);
-  //     this.ngOnInit();
-      
-
-  //   }
-  // }
 
     onEnviar(event: Event){
       event.preventDefault; 
