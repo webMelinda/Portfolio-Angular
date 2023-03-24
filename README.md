@@ -1,6 +1,6 @@
 # :clipboard:Proyecto Portfolio
 
-Este Proyecto Integrador se realizó en el marco del curso Yo Programo de Argentina Programa, en el cual se desarrolló un portafolio web que contiene datos personales, estudios cursados, experiencia laboral, conocimientos y habilidades, entre otros.
+Este Proyecto Integrador se realizó en el marco del curso Yo Programo de Argentina Programa, en el cual se desarrolló un portafolio web que contiene datos personales, estudios cursados, experiencia laboral, conocimientos y habilidades, entre otros. Podrás ver más sobre en BackEnd aquí: https://github.com/webMelinda/Backend-deploy-ArgentinaPrograma.git
 
 
 ## :wrench:Tecnologías usadas:
