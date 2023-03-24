@@ -45,6 +45,9 @@ export class NavBarComponent implements OnInit {
     return this.modoEdit;
   }
 
-  
+  //método para abrir y cerrar hamburguesa
+  redirect(pagina:string){
+    window.location.href=pagina
+  }
 
 }

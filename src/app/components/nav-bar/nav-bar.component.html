@@ -19,17 +19,17 @@
                   <a class="dropdown-item" routerLink="editred/{{red.id}}" *ngIf="modoEdit">Editar redes existentes</a>
                 <hr class="dropdown-divider">
 
-                <a class="dropdown-item" href="/#sobre mi"><span data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Sobre
-                  Mí</span></a>
-              <a class="dropdown-item" href="/#experiencia"><span data-bs-toggle="collapse"
-                  data-bs-target=".navbar-collapse.show">Experiencia Laboral</span></a>
-              <a class="dropdown-item" href="/#educacion"><span data-bs-toggle="collapse"
-                  data-bs-target=".navbar-collapse.show">Educación</span></a>
-              <a class="dropdown-item" href="/#habilidades"><span data-bs-toggle="collapse"
-                  data-bs-target=".navbar-collapse.show">Habilidades</span></a>
-              <a class="dropdown-item" href="/#proyectos"><span data-bs-toggle="collapse"
-                  data-bs-target=".navbar-collapse.show">Proyectos</span></a>
-                
+                <a (click)="redirect('/#sobre mi')" class="dropdown-item" href="" data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show">Sobre Mí</a>
+                <a (click)="redirect('/#experiencia')" class="dropdown-item" href="" data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show">Experiencia Laboral</a>
+                <a (click)="redirect('/#educacion')" class="dropdown-item" href="" data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show">Educación</a>
+                <a (click)="redirect('/#habilidades')" class="dropdown-item" href="" data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show">Habilidades</a>
+                <a (click)="redirect('/#proyectos')" class="dropdown-item" href="" data-bs-toggle="collapse"
+                  data-bs-target=".navbar-collapse.show">Proyectos</a>
+
               </div> 
               
             </div>
